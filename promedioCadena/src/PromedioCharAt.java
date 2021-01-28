@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
-public class PromedioTokenizer {
+public class PromedioCharAt {
 
 
     public double promedio(double cal1, double cal2, double cal3) {
@@ -159,7 +159,7 @@ public class PromedioTokenizer {
         System.out.println("  --- Programa que calcula la calificacion promedio de un --- \n " +
                 " estudiante a travéz de una entrada en cadena  ( usando StringTokenizer ) \n");
 
-        PromedioTokenizer prom = new PromedioTokenizer();
+        PromedioCharAt prom = new PromedioCharAt();
         prom.principal();
 
     }
