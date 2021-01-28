@@ -1,6 +1,7 @@
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
-public class PromedioSplit {
+public class PromedioTokenizer {
 
 
     public double promedio(double cal1, double cal2, double cal3) {
@@ -101,7 +102,15 @@ public class PromedioSplit {
     public String[] dividirCadena(String cadena) {
 
         String valor = cadena;
-        String[] valores = valor.split("_");
+        StringTokenizer st = new StringTokenizer(valor, "_");
+        String[] valores = new String[st.countTokens()];
+
+
+        int elementos = st.countTokens();
+        for (int i= 0; i < elementos; i++){
+            valores[i] = st.nextToken();
+        }
+
         return valores;
     }
 
@@ -148,9 +157,9 @@ public class PromedioSplit {
 
     public static void main(String[] args) {
         System.out.println("  --- Programa que calcula la calificacion promedio de un --- \n " +
-                " estudiante a travéz de una entrada en cadena  ( usando split ) \n");
+                " estudiante a travéz de una entrada en cadena  ( usando StringTokenizer ) \n");
 
-        PromedioSplit prom = new PromedioSplit();
+        PromedioTokenizer prom = new PromedioTokenizer();
         prom.principal();
 
     }
