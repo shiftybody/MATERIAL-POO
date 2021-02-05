@@ -26,11 +26,8 @@ public class LoopShare {
             for(int i = 0; i < ancho; i++) {
                 System.out.print("* ");
             }
-
             System.out.println();
         }
-
-
     }
 
     public void createTriangle(int tramo) {
