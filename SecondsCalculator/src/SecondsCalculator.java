@@ -1,12 +1,22 @@
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class SecondsCalculator {
-    //Progma  utilizando Split
-
-
+    //Programa utilizando Tokenizer
+    
     public String[] separarDatos(String cadena) {
 
-        return cadena.split(":");
+        //return cadena.split(":");
+
+        StringTokenizer st = new StringTokenizer(cadena, ":");
+        String[] valores = new String[st.countTokens()];
+
+        int elementos = st.countTokens();
+        for (int i= 0; i < elementos; i++){
+            valores[i] = st.nextToken();
+        }
+
+        return valores;
 
     }
 
