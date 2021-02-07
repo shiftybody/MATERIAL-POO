@@ -1,22 +1,32 @@
 import java.util.Scanner;
-import java.util.StringTokenizer;
 
 public class SecondsCalculator {
-    //Programa utilizando Tokenizer
-    
+    //Programa utilizando charAt()
+
     public String[] separarDatos(String cadena) {
 
-        //return cadena.split(":");
 
-        StringTokenizer st = new StringTokenizer(cadena, ":");
-        String[] valores = new String[st.countTokens()];
+        String acum = "";
+        String[] tokens = new String[3];
+        int indice = 0;
 
-        int elementos = st.countTokens();
-        for (int i= 0; i < elementos; i++){
-            valores[i] = st.nextToken();
+        for (int i = 0; i < cadena.length(); i++){
+            if (cadena.charAt(i) == ':') {
+                if (acum.length() != 0){
+                    tokens[indice] = acum;
+                    indice++;
+                    acum ="";
+                }
+            }
+            else{
+                acum += cadena.charAt(i);
+            }
         }
-
-        return valores;
+        if (acum.length() != 0){
+            tokens[indice] = acum;
+            indice ++;
+        }
+        return tokens;
 
     }
 
@@ -83,9 +93,7 @@ public class SecondsCalculator {
                 Calc.principal();
                 break;
 
-
             } catch (NumberFormatException e) {
-
                 System.out.println("java.lang.NumberFormatException");
 
             } catch (Exception e) {
