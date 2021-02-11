@@ -3,7 +3,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class NumerosRomanos {
-
+    // Este caso cae en excepciones como por ejejmplo no validar una cantidad de
+    // de veces que podemos recibir una literal
 
     public void Principal() throws Exception {
         System.out.print("Ingrese el número Romano que desea convertir: ");

@@ -15,21 +15,13 @@ public class WeatherApplication {
         String name = datos[0];
         int min = Integer.parseInt(datos[2]);
         int max = Integer.parseInt(datos[2]);
+        //se crea el objeto tipo weather o la instancia de un objeto
+        // una clase es el como el plano de una casa, hasta que se crea un objeto
 
-        for (int i = 2; i < (datos.length); i++) {
-            if (Integer.parseInt(datos[i]) > max) {
-                max = Integer.parseInt(datos[i]);
-            }
-            if (Integer.parseInt(datos[i]) < min) {
-                min = Integer.parseInt(datos[i]);
-            }
-        }
+        Weather weather = new Weather(datos[0]);
+        weather.setMin(Double.parseDouble(datos[2]));
+        weather.setMax(Double.parseDouble(datos[2]));
 
-        return "<city> \n " +
-                "      <name> " + name + "</name> \n " +
-                "      <lowest_temperature> " + min + " </lowest_temperture> \n " +
-                "      <highest_temperature> " + max + " </highest_temperture> \n " +
-                "</city>";
     }
 
     public String[] dividirCadena(String cadena) {
@@ -48,7 +40,7 @@ public class WeatherApplication {
 
         String[] datos = dividirCadena(solicitarDatos());
 
-        Pattern numberPat = Pattern.compile("[0-9]+");
+        Pattern numberPat = Pattern.compile("[0-9.]+");
 
         if (datos.length < 4) {
             throw new Exceptioncatch("Incomplete data. Need at least 4 tokens ");
@@ -77,7 +69,7 @@ public class WeatherApplication {
                 }
             }
         }
-        //si no ocurre ningun Exception desplegamos el numero mayor y menor
+        //si no ocurre ningún Exception desplegamos el numero mayor y menor
         System.out.println(solution(datos));
     }
 
