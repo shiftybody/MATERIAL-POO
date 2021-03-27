@@ -1,8 +1,10 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Principal {
 
     private static Scanner in = new Scanner(System.in);
+
 
     private int opciones () {
         while (true){
@@ -11,7 +13,7 @@ public class Principal {
                 cadena += "\n1: Agregar estudiante";
                 cadena += "\n2: Buscar estudiante";
                 cadena += "\n3: Borrar estudiante";
-                cadena += "\n4: Obtener numero de  estudiante";
+                cadena += "\n4: Obtener numero de estudiante";
                 cadena += "\n5: Desplegar Estudiantes";
                 cadena += "\n  Escribe el numero de la opcion que qieres realizar: ";
                 System.out.print(cadena);
@@ -34,7 +36,7 @@ public class Principal {
                 int expediente = Integer.parseInt(in.nextLine());
                 return expediente;
             }catch (NumberFormatException nfe){
-                System.out.println("Expediente Debe ser un valor numerico");
+                System.out.println("Expediente Debe ser un valor númerico");
             }
         }
     }
@@ -68,9 +70,11 @@ public class Principal {
                             + " estudiantes ");
                     break;
                 case 5:
-                    Estudiante [] estudiantes;
-                    estudiantes = catalogo.getEstudianteArray();
-                    for (Estudiante estudiante: estudiantes){
+                    /*Estudiante [] estudiantes;
+                    estudiantes = catalogo.getEstudianteArray(); */
+                         // patrón de diseño soluciones estandar para problemas de software erick gamma
+
+                    for (Estudiante estudiante: catalogo){
                         System.out.println(estudiante);
                     }
                     break;
@@ -81,19 +85,6 @@ public class Principal {
         }while (opcion !=0);
     }
 
-/*
-    private Estudiante[] ordenarPromedios(Estudiante[] estudiantes) {
-        for (int i = 0; i < indice - 1; i++) {
-            for (int j = i + 1; j < indice; j++) {
-                if (estudiantes[i].getPromedio() > estudiantes[j].getPromedio()) {
-                    Estudiante tempo = estudiantes[j];
-                    estudiantes[j] = estudiantes[i];
-                    estudiantes[i] = tempo;
-                }
-            }
-        }
-        return estudiantes;
-    } */
 
     private Estudiante solicitaEstudiante() {
         while (true) {
