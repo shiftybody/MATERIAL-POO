@@ -2,26 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9776efa1-c286-4b52-b11b-6167dd114b33" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CoffeSystem.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Coffee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CoffeeBrewer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/OrderItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TestCoffee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TestCoffeeBrewer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TestOrderItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TestProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DNASequence/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DNASequence/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DNASequence/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DNASequence/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DNASequence/DNASequence.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DNASequence/out/production/DNASequence/DNASequence.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DNASequence/src/DNASequence.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Catalog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GourmetCoffee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Sales.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArregloAlumnos/src/CatalogoEstudiantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ArregloAlumnos/src/CatalogoEstudiantes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/TestCoffee.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/TestCoffeeBrewer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/TestOrderItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/TestProduct.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Coffee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Coffee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestCoffee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestCoffeeBrewer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestOrderItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TestProduct.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,16 +57,16 @@
       <recent name="C:\Users\david\Documents\POO\CoffeSystem\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestCoffeeBrewer">
-    <configuration name="CafeGourmet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="CafeGourmet" />
+  <component name="RunManager" selected="Application.GourmetCoffee">
+    <configuration name="GourmetCoffee" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GourmetCoffee" />
       <module name="CoffeSystem" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCoffee" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TestCoffee" />
+    <configuration name="TestCatalog" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TestCatalog" />
       <module name="CoffeSystem" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -84,15 +79,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestOrderItem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TestOrderItem" />
+    <configuration name="TestOrder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TestOrder" />
       <module name="CoffeSystem" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestProduct" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TestProduct" />
+    <configuration name="TestSales" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TestSales" />
       <module name="CoffeSystem" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -111,11 +106,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GourmetCoffee" />
+        <item itemvalue="Application.TestSales" />
+        <item itemvalue="Application.TestOrder" />
+        <item itemvalue="Application.TestCatalog" />
         <item itemvalue="Application.TestCoffeeBrewer" />
-        <item itemvalue="Application.TestOrderItem" />
-        <item itemvalue="Application.TestCoffee" />
-        <item itemvalue="Application.TestProduct" />
-        <item itemvalue="Application.CafeGourmet" />
       </list>
     </recent_temporary>
   </component>
@@ -129,7 +124,11 @@
       <updated>1615488057847</updated>
       <workItem from="1615488059806" duration="2112000" />
       <workItem from="1615592419221" duration="852000" />
-      <workItem from="1615595551562" duration="10194000" />
+      <workItem from="1615595551562" duration="15837000" />
+      <workItem from="1615916734386" duration="1273000" />
+      <workItem from="1616040957744" duration="907000" />
+      <workItem from="1616042372155" duration="1195000" />
+      <workItem from="1617670168404" duration="12499000" />
     </task>
     <servers />
   </component>

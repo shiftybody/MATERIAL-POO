@@ -86,7 +86,7 @@ public class Coffee extends Product {
 
     /**
      *Sobrescribe el metodo toString
-     * regresa la representacion string de un objeto cofee
+     * regresa la representacion string de un objeto coffee
      * @return   code_description_price_origin_roast_flavor_aroma_acidity_body
      */
 
