@@ -1,3 +1,10 @@
+/**
+ * Clase que mantiene unalista de art[iculos de la orden.
+ * Implementando la interfaz Iterable<OrderItem>
+ * @author Shiftybody
+ * @version 0.2
+ */
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -6,22 +13,43 @@ public class Order /*implements Iterable<OrderItem> */ {
     private ArrayList<OrderItem> items = null;
     // private ArrayList<OrderItem> items = new ArrayList<OrderItem>();
 
+    /**
+     * Crea la colección items, que inicialmente está vacío.
+      */
     public Order(){
         items = new ArrayList<>();
     }
 
+    /**
+     * Añade el artículo especificado en la colección items.
+     * @param orderItem
+     */
     public void addItem(OrderItem orderItem){
         items.add(orderItem);
     }
 
+    /**
+     * Elimina el artículo especificado de la colección items, es decir la orden.
+     * @param orderItem
+     */
     public void removeItem(OrderItem orderItem){
         items.remove(orderItem);
     }
 
+    /**
+     *Regresa un iterador sobre las instancias de la colección items.
+     * @return iterator
+     */
     public Iterator<OrderItem> iterator(){
         return items.iterator();
     }
 
+    /**
+     *Regresa una referencia a la instancia OrderItem con el producto especificado.
+     * Regresa null si no hay elemento en la orden con el producto especificado.
+     * @param product
+     * @return itm
+     */
     public OrderItem getItem(Product product){
 
         for (OrderItem itm : items) {
@@ -32,22 +60,26 @@ public class Order /*implements Iterable<OrderItem> */ {
         return null;
     }
 
+    /**
+     * Regresa el número de instancias que hay en la colección items.
+     * @return items.size()
+     */
     public int getNumberOfItems(){
-        int numero = 0;
-
-        for(int i = 0;i < items.size();i++){
-            numero += 1;
-        }
-        return numero;
+        return items.size();
     }
 
+    /**
+     * Regresa el costo total de la orden
+     * @return costoTotal
+     */
     public double getTotalCost(){
+
         double costoTotal = 0;
 
-        for (Object o : items) {
-            OrderItem ot = (OrderItem) o;
+        for (OrderItem ot : items) {
             costoTotal += ot.getValue();
         }
+
         return costoTotal;
     }
 

@@ -8,12 +8,12 @@
 
 public class Product {
 
-    private String code;
-    private String description;
-    private double price;
+    private final String code;
+    private final String description;
+    private final double price;
 
     /**
-     * Inizializa el código y la descripción de un producto
+     * Inicializa el código y la descripción de un producto
      * @param newCode Valor al cual es iniciaalizado el atributo code
      * @param description Valor al cual es inizalizado el atributo description
      * @param price Valor para inicializar el pecio del producto
@@ -60,16 +60,13 @@ public class Product {
     /**
      * Sobrescribe el metodo equals de la clase Object
      * Devuelve verdadero si dos codigos son iguales y falso si no
-     * @param obj
      * @return  bool
      */
     @Override
     public boolean equals(Object obj){
         if (obj instanceof Product){
             Product prodTemp = (Product) obj;
-            if (this.code.equals(prodTemp.getCode())){
-                return true;
-            }
+            return this.code.equals(prodTemp.getCode());
         }
         return false;
     }

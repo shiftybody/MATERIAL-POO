@@ -6,11 +6,11 @@
 
 public class OrderItem {
 
-    private Product product;
+    private final Product product;
     private int quantity;
 
     /**
-     * Inizializa la variable de instancia product y la cantidad de un producto
+     * Inicializa la variable de instancia product y la cantidad de un producto
      * @param product Esta variable de instancia representa la asociación de una vía entre OrderItem y Product.
      * @param quantity  La cantidad del producto en la orden.
      */
