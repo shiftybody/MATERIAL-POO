@@ -5,6 +5,7 @@
  * @version 0.2
  */
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -74,13 +75,14 @@ public class Order /*implements Iterable<OrderItem> */ {
      */
     public double getTotalCost(){
 
+        DecimalFormat formato1 = new DecimalFormat("#.00");
         double costoTotal = 0;
 
         for (OrderItem ot : items) {
             costoTotal += ot.getValue();
         }
 
-        return costoTotal;
+        return Math.round(costoTotal);
     }
 
       /*@Override

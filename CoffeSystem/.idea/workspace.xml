@@ -2,21 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9776efa1-c286-4b52-b11b-6167dd114b33" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Catalog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GourmetCoffee.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Sales.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ArregloAlumnos/src/CatalogoEstudiantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ArregloAlumnos/src/CatalogoEstudiantes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/TestCoffee.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/TestCoffeeBrewer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/TestOrderItem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/TestProduct.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Coffee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Coffee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TestCoffee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TestCoffeeBrewer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TestOrderItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TestProduct.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/Catalog.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/Catalog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/GourmetCoffee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/GourmetCoffee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/OrderItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/OrderItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/Sales.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/Sales.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GourmetCoffee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GourmetCoffee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +30,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1pcgzdBJPDmqzB45WQIOmEf3lgF" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -43,6 +48,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -57,7 +66,7 @@
       <recent name="C:\Users\david\Documents\POO\CoffeSystem\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GourmetCoffee">
+  <component name="RunManager" selected="Application.GourmetCoffeeSolution">
     <configuration name="GourmetCoffee" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GourmetCoffee" />
       <module name="CoffeSystem" />
@@ -93,20 +102,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GourmetCoffee" />
+        <item itemvalue="Application.GourmetCoffeeSolution" />
         <item itemvalue="Application.TestSales" />
         <item itemvalue="Application.TestOrder" />
         <item itemvalue="Application.TestCatalog" />
@@ -128,7 +139,8 @@
       <workItem from="1615916734386" duration="1273000" />
       <workItem from="1616040957744" duration="907000" />
       <workItem from="1616042372155" duration="1195000" />
-      <workItem from="1617670168404" duration="12499000" />
+      <workItem from="1617670168404" duration="14577000" />
+      <workItem from="1617902211792" duration="49210000" />
     </task>
     <servers />
   </component>

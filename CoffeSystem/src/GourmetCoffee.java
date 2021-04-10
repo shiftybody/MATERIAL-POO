@@ -1,13 +1,14 @@
 
+
+
+import java.util.Iterator;
+import java.util.Scanner;
+
 /**
  * Clase que crea una interfaz de consola para procesar órdenes de la tienda.
  * @author Shiftybody
  * @version 0.2
  */
-
-import java.io.IOException;
-import java.util.Iterator;
-import java.util.Scanner;
 
 public class GourmetCoffee {
 
@@ -21,7 +22,9 @@ public class GourmetCoffee {
     private Order  currentOrder;
     private final Sales  sales;
 
-
+    /**
+     * Inicia los atributos catalog, currentOrder y sales.
+     */
     public GourmetCoffee() {
 
         catalog = addCatalog();
@@ -29,26 +32,25 @@ public class GourmetCoffee {
         currentOrder = new Order();
     }
 
+    /**
+     * Despliega el catálogo.
+     */
     public void displayCatalog() {
 
-
-        if (catalog.getNumberOfProducts() == 0) {
-            System.out.println("The catalog is empty");
-        } else {
-            System.out.println("");
-            for (Iterator<Product> i = catalog.iterator(); i.hasNext();) {
-
-                Product product = (Product) i.next();
-
-                System.out.println(product.getCode() + " " +
-                        product.getDescription() + ANSI_BLUE + " $" + product.getPrice() + ANSI_RESET );
-            }
+        for (Iterator<Product> itP = catalog.iterator(); itP.hasNext(); ) {
+            Product product = itP.next();
+            System.out.println(product.getCode() + " " +
+                               product.getDescription() + ANSI_BLUE + " $" + product.getPrice() + ANSI_RESET );
         }
+
     }
 
-    public void displayProductInfo() throws IOException {
+    /**
+     *Este método le solicita al usuario un código de producto y despliega la información sobre el producto especificado.
+     */
+    public void displayProductInfo() {
 
-        Product product = readProduct();
+        Product product = requestProductCode();
 
         System.out.println("  Description: " + product.getDescription());
         System.out.println("  Price: " + ANSI_BLUE + " $" + product.getPrice() + ANSI_RESET );
@@ -74,11 +76,14 @@ public class GourmetCoffee {
         }
     }
 
+    /**
+     *Despliega los productos incluidos en la orden actual.
+     */
     public void displayOrder() {
 
 
         if (currentOrder.getNumberOfItems() == 0) {
-            System.out.println("The current order is empty ");
+            System.out.println("Empty current order ");
         } else {
             for (Iterator<OrderItem> i = currentOrder.iterator(); i.hasNext();) {
                 System.out.println(i.next().toString());
@@ -88,29 +93,37 @@ public class GourmetCoffee {
         }
     }
 
+    /**
+     * Este método le solicita al usuario el código de un producto y la cantidad. Si el producto
+     * especificado no es parte de la orden actual, entonces es el producto y la cantidad es añadido
+     * a la orden; de otra manera, la cantidad de producto es actualizada.
+     */
+    public void addModifyProduct() {
 
-    public void addModifyProduct()  throws IOException  {
-
-        Product product = readProduct();
-        int quantity = readQuantity();
+        Product product = requestProductCode();
+        int quantity = requestQuantity();
 
         OrderItem orderItem = currentOrder.getItem(product);
 
         if (orderItem == null) {
             currentOrder.addItem(new OrderItem(product, quantity));
 
-            System.out.println("The product " + product.getCode()
-                    + " has been added");
+            System.out.println("Product " + product.getCode()
+                    + " added");
         } else {
-            orderItem.setQuantity(quantity);
+            orderItem.setQuantity(requestQuantity());
             System.out.println("The quantity of the product " +
                     product.getCode() + " has been modified");
         }
     }
 
-    public void removeProduct()  throws IOException  {
+    /**
+     *Este método le solicita al usuario el código de un producto y elimina el
+     * producto especificado de la orden actual
+     */
+    public void removeProduct() {
 
-        Product product = readProduct();
+        Product product = requestProductCode();
         OrderItem orderItem = currentOrder.getItem(product);
 
         if (orderItem != null) {
@@ -122,6 +135,9 @@ public class GourmetCoffee {
         }
     }
 
+    /**
+     * Registra la venta de la orden actual.
+     */
     public void saleOrder()  {
 
         if (currentOrder.getNumberOfItems() > 0) {
@@ -133,21 +149,23 @@ public class GourmetCoffee {
         }
     }
 
+    /**
+     * Despliega las órdenes que han sido vendidas.
+     */
     public void displayOrdersSold() {
-
 
 
         if (sales.getNumberOfOrders() != 0) {
             int orderNumber = 1;
-            for (Iterator<Order> i = sales.iterator(); i.hasNext(); ) {
+            for (Iterator<Order> itS = sales.iterator(); itS.hasNext(); ) {
 
-                Order order = (Order) i.next();
+                Order order = itS.next();
 
-                System.out.println("");
+                System.out.println();
                 System.out.println("      Order " + orderNumber++);
 
-                for (Iterator<OrderItem> j = order.iterator(); j.hasNext();) {
-                    System.out.println("   " + j.next().toString());
+                for (Iterator<OrderItem> itItemOrder = order.iterator(); itItemOrder.hasNext();) {
+                    System.out.println("   " + itItemOrder.next().toString());
                 }
                 System.out.println("   Total:" + ANSI_BLUE + " $" +
                         order.getTotalCost() + ANSI_RESET);
@@ -157,15 +175,17 @@ public class GourmetCoffee {
         }
     }
 
-
+    /**
+     * Despliega el número de órdenes que contienen el producto especificado
+     * @param product
+     */
     public void displayNumberOfOrders(Product product) {
 
         int numOrd = 0;
-        Order order = null;
 
-        for (Iterator<Order> i = sales.iterator(); i.hasNext();){
+        for (Iterator<Order> itS = sales.iterator(); itS.hasNext();){
 
-            order = (Order) i.next();
+            Order order = itS.next();
             OrderItem item = order.getItem(product);
 
             if(item != null){
@@ -173,29 +193,45 @@ public class GourmetCoffee {
             }
         }
 
-        System.out.println("The number of orders that contain the product "+
-                       product.getCode()+" are: "+ numOrd);
+        System.out.println("The product "+ product.getCode() +" found in: "+ numOrd + " order/s");
 
     }
 
+    /**
+     * Despliega la cantidad total que ha sido vendida de cada uno de los productos en el catálogo
+     */
 
     public void displayTotalQuantityOfProducts() {
 
-        Product product = null;
-        int total = 0;
+        Product product;
 
-        for(Iterator<Product> i = catalog.iterator(); i.hasNext();){
+        int numOrd = 0;
+        System.out.println(" ");
+        for(Iterator<Product> itP = catalog.iterator(); itP.hasNext();){
 
-            product = (Product)i.next();
-            total = catalog.getNumberOfProducts();
+            product = itP.next();
 
-            System.out.println(product.getCode() + " " + total+"\n");
+            int orderNumber = 1;
+            for (Iterator<Order> itS = sales.iterator(); itS.hasNext(); ) {
 
+                Order order = itS.next();
+
+                for (Iterator<OrderItem> itItemOrder = order.iterator(); itItemOrder.hasNext();) {
+                    System.out.println("   " + itItemOrder.next().getQuantity());
+                }
+
+            }
+
+            System.out.print(product.getCode() + " " + numOrd+"\n");
+
+            numOrd = 0;
         }
-
     }
 
-
+    /**
+     * Crea un catálogo vacío y luego le agrega productos.
+     * @return catalogo
+     */
     private Catalog addCatalog() {
 
         Catalog catalog = new Catalog();
@@ -285,10 +321,14 @@ public class GourmetCoffee {
         return catalog;
     }
 
-    private Product readProduct() {
+    /**
+     * Solicita al usuario la entrada del codigo de producto
+     * @return
+     */
+    private Product requestProductCode() {
 
         do  {
-            System.out.println("");
+            System.out.println();
             System.out.print("  Product code> ");
 
             Product product = catalog.getProduct(stdIn.nextLine());
@@ -296,13 +336,16 @@ public class GourmetCoffee {
             if (product != null) {
                 return product;
             } else {
-                System.out.println("There are no products with that code");
+                System.out.println("Product not found. Wrong product code");
             }
         }  while (true);
     }
 
-
-    private int readQuantity() throws IOException  {
+    /**
+     * Solicita al usuario la cantidad de producto
+     * @return
+     */
+    private int requestQuantity() {
 
         int quantity;
 
@@ -317,15 +360,19 @@ public class GourmetCoffee {
 
                 } else  {
                     System.out.println(
-                            "Invalid input. Please enter a positive integer");
+                            "Invalid input. A positive number was expected ");
                 }
+
             } catch (NumberFormatException  nfe)  {
                 System.out.println("Error: Incorrect number format. " + nfe.getMessage());
             }
         }  while (true);
     }
 
-    private void principal() throws IOException  {
+    /**
+     * Presenta al usuario una terminal con las opcones de la aplicacion
+     */
+    private void principal() {
 
         do  {
             try  {
@@ -348,28 +395,18 @@ public class GourmetCoffee {
 
                 int option = Integer.parseInt(stdIn.nextLine());
 
-                if (option == 1)  {
-                    displayCatalog();
-                } else if (option == 2)  {
-                    displayProductInfo();
-                } else if (option == 3)  {
-                    displayOrder();
-                } else if (option == 4)  {
-                    addModifyProduct();
-                } else if (option == 5)  {
-                    removeProduct();
-                } else if (option == 6)  {
-                    saleOrder();
-                } else if (option == 7)  {
-                    displayOrdersSold();
-                } else if (option == 8)  {
-                    displayNumberOfOrders(readProduct());
-                } else if (option == 9)  {
-                    displayTotalQuantityOfProducts();
-                }else if (0 <= option && 9 >= option) {
-                    break;
-                }else {
-                    System.out.println("    Invalid option:  " + option);
+                switch (option) {
+                    case 1 -> displayCatalog();
+                    case 2 -> displayProductInfo();
+                    case 3 -> displayOrder();
+                    case 4 -> addModifyProduct();
+                    case 5 -> removeProduct();
+                    case 6 -> saleOrder();
+                    case 7 -> displayOrdersSold();
+                    case 8 -> displayNumberOfOrders(requestProductCode());
+                    case 9 -> displayTotalQuantityOfProducts();
+                    case 0 -> System.out.println(" ");
+                    default -> System.out.println("    Invalid option:  " + option);
                 }
 
             } catch (NumberFormatException  nfe)  {
@@ -378,7 +415,11 @@ public class GourmetCoffee {
         }  while (true);
     }
 
-    public static void  main(String[]  args) throws IOException  {
+    /**
+     * Inicia la aplicación
+     * @param args
+     */
+    public static void  main(String[]  args) {
 
         GourmetCoffee  application = new GourmetCoffee();
         application.principal();
