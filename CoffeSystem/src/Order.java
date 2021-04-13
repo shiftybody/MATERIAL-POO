@@ -9,10 +9,10 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Order /*implements Iterable<OrderItem> */ {
+public class Order implements Iterable<OrderItem>  {
 
     private ArrayList<OrderItem> items = null;
-    // private ArrayList<OrderItem> items = new ArrayList<OrderItem>();
+    //private ArrayList<OrderItem> items = new ArrayList<OrderItem>();
 
     /**
      * Crea la colección items, que inicialmente está vacío.

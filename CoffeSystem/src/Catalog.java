@@ -8,7 +8,7 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Catalog  /*implements Iterable<Product> */ {
+public class Catalog  implements Iterable<Product> {
 
     private ArrayList<Product> products = null;
     // private ArrayList<Product> products = new ArrayList<Product>();

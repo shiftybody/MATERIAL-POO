@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 /**
  * Clase Cofee que hereda de la clase producto
  * @author Shiftybody
@@ -97,11 +99,13 @@ public class Coffee extends Product {
 
     }
 
-
-
-
-
-
-
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Coffee coffee = (Coffee) o;
+        return Objects.equals(origin, coffee.origin) && Objects.equals(roast, coffee.roast) && Objects.equals(flavor, coffee.flavor) && Objects.equals(aroma, coffee.aroma) && Objects.equals(acidity, coffee.acidity) && Objects.equals(body, coffee.body);
+    }
 
 }

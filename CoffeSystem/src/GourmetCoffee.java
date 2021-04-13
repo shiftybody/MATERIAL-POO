@@ -1,13 +1,10 @@
 
-
-
-import java.util.Iterator;
 import java.util.Scanner;
 
 /**
  * Clase que crea una interfaz de consola para procesar órdenes de la tienda.
  * @author Shiftybody
- * @version 0.2
+ * @version 0.3
  */
 
 public class GourmetCoffee {
@@ -37,10 +34,9 @@ public class GourmetCoffee {
      */
     public void displayCatalog() {
 
-        for (Iterator<Product> itP = catalog.iterator(); itP.hasNext(); ) {
-            Product product = itP.next();
+        for (Product product : catalog) {
             System.out.println(product.getCode() + " " +
-                               product.getDescription() + ANSI_BLUE + " $" + product.getPrice() + ANSI_RESET );
+                    product.getDescription() + ANSI_BLUE + " $" + product.getPrice() + ANSI_RESET);
         }
 
     }
@@ -85,8 +81,8 @@ public class GourmetCoffee {
         if (currentOrder.getNumberOfItems() == 0) {
             System.out.println("Empty current order ");
         } else {
-            for (Iterator<OrderItem> i = currentOrder.iterator(); i.hasNext();) {
-                System.out.println(i.next().toString());
+            for (OrderItem orderItem : currentOrder) {
+                System.out.println(orderItem.toString());
             }
             System.out.println("Total:" + ANSI_BLUE + " $" +
                     currentOrder.getTotalCost() + ANSI_RESET);
@@ -157,15 +153,13 @@ public class GourmetCoffee {
 
         if (sales.getNumberOfOrders() != 0) {
             int orderNumber = 1;
-            for (Iterator<Order> itS = sales.iterator(); itS.hasNext(); ) {
-
-                Order order = itS.next();
+            for (Order order : sales) {
 
                 System.out.println();
                 System.out.println("      Order " + orderNumber++);
 
-                for (Iterator<OrderItem> itItemOrder = order.iterator(); itItemOrder.hasNext();) {
-                    System.out.println("   " + itItemOrder.next().toString());
+                for (OrderItem orderItem : order) {
+                    System.out.println("   " + orderItem.toString());
                 }
                 System.out.println("   Total:" + ANSI_BLUE + " $" +
                         order.getTotalCost() + ANSI_RESET);
@@ -183,13 +177,12 @@ public class GourmetCoffee {
 
         int numOrd = 0;
 
-        for (Iterator<Order> itS = sales.iterator(); itS.hasNext();){
+        for (Order order : sales) {
 
-            Order order = itS.next();
             OrderItem item = order.getItem(product);
 
-            if(item != null){
-                numOrd+=1;
+            if (item != null) {
+                numOrd += 1;
             }
         }
 
@@ -202,29 +195,16 @@ public class GourmetCoffee {
      */
 
     public void displayTotalQuantityOfProducts() {
-
-        Product product;
-
-        int numOrd = 0;
-        System.out.println(" ");
-        for(Iterator<Product> itP = catalog.iterator(); itP.hasNext();){
-
-            product = itP.next();
-
-            int orderNumber = 1;
-            for (Iterator<Order> itS = sales.iterator(); itS.hasNext(); ) {
-
-                Order order = itS.next();
-
-                for (Iterator<OrderItem> itItemOrder = order.iterator(); itItemOrder.hasNext();) {
-                    System.out.println("   " + itItemOrder.next().getQuantity());
+        for (Product product : catalog){
+            int quantity = 0;
+            for (Order orden : sales){
+                OrderItem item = orden.getItem(product);
+                if (item != null){
+                    quantity += item.getQuantity();;
                 }
-
             }
-
-            System.out.print(product.getCode() + " " + numOrd+"\n");
-
-            numOrd = 0;
+            if (quantity > 0)
+            System.out.println(product.getCode() + " Quantity: " + quantity);
         }
     }
 

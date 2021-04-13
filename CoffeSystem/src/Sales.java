@@ -8,7 +8,7 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Sales /*implements Iterable<Order>*/ {
+public class Sales implements Iterable<Order> {
 
     /**
      * ArrayList que contiene las referencias a las instancias de la clase Order.

@@ -45,7 +45,7 @@ public class OrderItem {
     }
 
     /**
-     * @return  la multiplicación de quantity por price.
+     * @return la multiplicación de quantity por price.
      */
     public double getValue() {
         return  this.quantity * this.product.getPrice() ;
