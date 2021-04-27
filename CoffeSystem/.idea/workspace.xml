@@ -4,12 +4,6 @@
     <list default="true" id="9776efa1-c286-4b52-b11b-6167dd114b33" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../ArregloAlumnos/src/CatalogoEstudiantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ArregloAlumnos/src/CatalogoEstudiantes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Catalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Catalog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Coffee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Coffee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GourmetCoffee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GourmetCoffee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sales.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,17 +92,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.GourmetCoffee" />
@@ -136,7 +119,8 @@
       <workItem from="1617670168404" duration="14577000" />
       <workItem from="1617902211792" duration="49417000" />
       <workItem from="1618270875040" duration="862000" />
-      <workItem from="1618330129313" duration="5957000" />
+      <workItem from="1618330129313" duration="6399000" />
+      <workItem from="1618506055384" duration="60000" />
     </task>
     <servers />
   </component>

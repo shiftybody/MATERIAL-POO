@@ -7,6 +7,7 @@ import java.util.Iterator;
 public class CatalogoEstudiantes implements Iterable<Estudiante> {
 
     private ArrayList<Estudiante> estudiantes = new ArrayList<Estudiante>();
+
     //private Estudiante[] estudiantes = new Estudiante[5];
 
 
@@ -71,6 +72,7 @@ public class CatalogoEstudiantes implements Iterable<Estudiante> {
     public int getNumeroEstudiantes(){
         return estudiantes.size(); // indica cuantos elementos hay en el array list
     }
+
     public Estudiante[] getEstudianteArray(){
 
         return (Estudiante[]) estudiantes.toArray();
