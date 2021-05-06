@@ -1,12 +1,14 @@
-/**
- * Clase que mantiene una lista de las órdenes que han sid completadas.
- * Implementa la interfaz Iterable<Order>
- * @author Shiftybody
- * @version 0.2
- */
 
 import java.util.ArrayList;
 import java.util.Iterator;
+
+/**
+ * Clase que mantiene una lista de las órdenes que han sid completadas.
+ * Implementa la interfaz Iterable<Order>
+ *
+ * @author Shiftybody
+ * @version 0.2
+ */
 
 public class Sales implements Iterable<Order> {
 
@@ -20,36 +22,35 @@ public class Sales implements Iterable<Order> {
     /**
      * Crea la colección orders, que inicialmente está vacío.
      */
-    public Sales(){
+    public Sales() {
         orders = new ArrayList<Order>();
     }
 
     /**
-     *Añade la orden especificada a la colección orders.
+     * Añade la orden especificada a la colección orders.
+     *
      * @param order
      */
-    public void addOrder(Order order){
+    public void addOrder(Order order) {
         orders.add(order);
     }
 
     /**
-     *Regresa un iterador sobre las instancias de la colección orders.
-     * @return iterator
+     * Regresa el número de instancias que hay en la colección orders.
+     *
+     * @return orders.size
      */
-    public Iterator<Order> iterator(){
-        return orders.iterator();
+    public int getNumberOfOrders() {
+        return orders.size();
     }
 
     /**
-     *Regresa el número de instancias que hay en la colección orders.
-     * @return orders.size
+     * Regresa un iterador sobre las instancias de la colección orders.
+     *
+     * @return iterator
      */
-    public int getNumberOfOrders(){
-       return orders.size();
-    }
-
-      /*@Override
+    @Override
     public Iterator<Order> iterator() {
         return orders.iterator();
-    }*/
+    }
 }
