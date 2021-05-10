@@ -8,9 +8,9 @@
 
 public class CoffeeBrewer extends Product {
 
-    private String model;
-    private String waterSupply;
-    private int numberOfCups;
+    private final String model;
+    private final String waterSupply;
+    private final int numberOfCups;
 
     /**
      * Constructor que inicializa las variables de instancia

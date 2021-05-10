@@ -1,27 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="9776efa1-c286-4b52-b11b-6167dd114b33" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/IFormato.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/JSON.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Text.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/XML.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Biblioteca/src/Libro.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Biblioteca/src/Libro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Biblioteca/src/Prestable.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Biblioteca/src/Prestable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Biblioteca/src/Publicacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Biblioteca/src/Publicacion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Biblioteca/src/Revista.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Biblioteca/src/Revista.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArregloAlumnos/out/production/ArregloAlumnos/CatalogoEstudiantes.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ArregloAlumnos/out/production/ArregloAlumnos/CatalogoEstudiantes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArregloAlumnos/out/production/ArregloAlumnos/Estudiante.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ArregloAlumnos/out/production/ArregloAlumnos/Estudiante.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArregloAlumnos/out/production/ArregloAlumnos/Principal.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ArregloAlumnos/out/production/ArregloAlumnos/Principal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArregloAlumnos/src/CatalogoEstudiantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ArregloAlumnos/src/CatalogoEstudiantes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArregloAlumnos/src/Estudiante.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ArregloAlumnos/src/Estudiante.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ArregloAlumnos/src/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ArregloAlumnos/src/Principal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/Catalog.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/Catalog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/GourmetCoffee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/GourmetCoffee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Catalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Catalog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Coffee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Coffee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CoffeeBrewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoffeeBrewer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GourmetCoffee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GourmetCoffee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sales.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,11 +59,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="emulator" />
   </component>
   <component name="ReaderModeSettings">
     <option name="showRenderedDocs" value="false" />
@@ -118,17 +110,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.GourmetCoffee" />
@@ -161,7 +142,14 @@
       <workItem from="1619714044771" duration="2125000" />
       <workItem from="1620146112426" duration="5057000" />
       <workItem from="1620245466900" duration="706000" />
-      <workItem from="1620246599849" duration="10036000" />
+      <workItem from="1620246599849" duration="10482000" />
+      <workItem from="1620318315965" duration="71000" />
+      <workItem from="1620602903337" duration="255000" />
+      <workItem from="1620606543405" duration="717000" />
+      <workItem from="1620608618494" duration="884000" />
+      <workItem from="1620609914383" duration="172000" />
+      <workItem from="1620610108840" duration="1524000" />
+      <workItem from="1620618006165" duration="2334000" />
     </task>
     <servers />
   </component>
