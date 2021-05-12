@@ -5,14 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9776efa1-c286-4b52-b11b-6167dd114b33" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../ArregloAlumnos/out/production/ArregloAlumnos/CatalogoEstudiantes.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ArregloAlumnos/out/production/ArregloAlumnos/CatalogoEstudiantes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArregloAlumnos/out/production/ArregloAlumnos/Estudiante.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ArregloAlumnos/out/production/ArregloAlumnos/Estudiante.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArregloAlumnos/out/production/ArregloAlumnos/Principal.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ArregloAlumnos/out/production/ArregloAlumnos/Principal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArregloAlumnos/src/CatalogoEstudiantes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ArregloAlumnos/src/CatalogoEstudiantes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArregloAlumnos/src/Estudiante.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ArregloAlumnos/src/Estudiante.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ArregloAlumnos/src/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ArregloAlumnos/src/Principal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/CatalogLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataFormatException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/FileCatalogLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HTMLSaleFormat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PlainTextSalesFormat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SalesFormat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/XMLSalesFormat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CoffeeBrewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoffeeBrewer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/CoffeeBrewer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/CoffeeBrewer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/GourmetCoffee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/GourmetCoffee.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/JSON.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/Text.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/XML.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GourmetCoffee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GourmetCoffee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JSON.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Text.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/XML.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +57,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
@@ -60,11 +71,12 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="emulator" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="ReaderModeSettings">
     <option name="showRenderedDocs" value="false" />
@@ -89,8 +101,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestCoffeeBrewer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TestCoffeeBrewer" />
+    <configuration name="TestFileCatalogLoader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TestFileCatalogLoader" />
       <module name="CoffeSystem" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -110,13 +122,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.GourmetCoffee" />
+        <item itemvalue="Application.TestFileCatalogLoader" />
         <item itemvalue="Application.TestSales" />
         <item itemvalue="Application.TestOrder" />
         <item itemvalue="Application.TestCatalog" />
-        <item itemvalue="Application.TestCoffeeBrewer" />
       </list>
     </recent_temporary>
   </component>
@@ -149,7 +174,23 @@
       <workItem from="1620608618494" duration="884000" />
       <workItem from="1620609914383" duration="172000" />
       <workItem from="1620610108840" duration="1524000" />
-      <workItem from="1620618006165" duration="2334000" />
+      <workItem from="1620618006165" duration="3007000" />
+      <workItem from="1620621844488" duration="114000" />
+      <workItem from="1620622429136" duration="750000" />
+      <workItem from="1620623227517" duration="6000" />
+      <workItem from="1620656526846" duration="357000" />
+      <workItem from="1620666125785" duration="577000" />
+      <workItem from="1620673200810" duration="591000" />
+      <workItem from="1620677358799" duration="131000" />
+      <workItem from="1620707938079" duration="284000" />
+      <workItem from="1620708393748" duration="527000" />
+      <workItem from="1620708983882" duration="308000" />
+      <workItem from="1620709506833" duration="180000" />
+      <workItem from="1620709734820" duration="56000" />
+      <workItem from="1620709827793" duration="19000" />
+      <workItem from="1620741012581" duration="13000" />
+      <workItem from="1620749230530" duration="7702000" />
+      <workItem from="1620772103916" duration="13015000" />
     </task>
     <servers />
   </component>

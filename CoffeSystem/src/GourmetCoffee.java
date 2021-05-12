@@ -1,11 +1,5 @@
-import java.util.Scanner;
-
-/**
- * Clase que crea una interfaz de consola para procesar órdenes de la tienda.
- *
- * @author Shiftybody
- * @version 0.3
- */
+import java.io.*;
+import java.util.*;
 
 public class GourmetCoffee {
 
@@ -16,18 +10,58 @@ public class GourmetCoffee {
     public static final String ANSI_BLUE = "\u001B[34m";
 
     private final Catalog catalog;
-    private Order currentOrder;
     private final Sales sales;
 
-    private IFormato formato;
+    private Order currentOrder;
+    private SalesFormat salesFormat;
+
+    private void loadSales() {
+        Order orderOne = new Order();
+        Product productOne = catalog.getProduct("C001");
+
+        if (productOne != null) {
+            orderOne.addItem(new OrderItem(productOne, 5));
+            sales.addOrder(orderOne);
+        }
+
+        Order orderTwo = new Order();
+        Product productTwo = catalog.getProduct("C002");
+        Product productThree = catalog.getProduct("A001");
+
+        if ((productTwo != null) && (productThree != null)) {
+            orderTwo.addItem(new OrderItem(productTwo, 2));
+            orderTwo.addItem(new OrderItem(productThree, 2));
+            sales.addOrder(orderTwo);
+        }
+
+        Order orderThree = new Order();
+        Product productFour = catalog.getProduct("B002");
+
+        if (productFour != null) {
+            orderThree.addItem(new OrderItem(productFour, 1));
+            sales.addOrder(orderThree);
+        }
+    }
+
+    private void writeFile(String filename, String content)
+            throws IOException {
+
+        PrintWriter fileOut = new PrintWriter(new FileWriter(filename));
+        fileOut.println(content);
+        fileOut.close();
+
+    }
 
     /**
      * Inicia los atributos catalog, currentOrder y sales.
      */
-    public GourmetCoffee() {
+    public GourmetCoffee(Catalog initialCatalog) {
 
-        catalog = addCatalog();
+        catalog = initialCatalog;
         sales = new Sales();
+        salesFormat = PlainTextSalesFormat.getSingletonInstance();
+        loadSales();
+
         currentOrder = new Order();
     }
 
@@ -36,13 +70,22 @@ public class GourmetCoffee {
      */
     public void displayCatalog() {
 
-        this.setStrategy();
-        System.out.println(formato.creaFormato(catalog));
+        int size = catalog.getNumberOfProducts();
 
+        if (size == 0) {
+            System.out.println("The catalog is empty");
+        } else {
+            for (Product product : catalog) {
+
+                System.out.println(product.getCode() + " "
+                        + product.getDescription());
+            }
+        }
     }
 
     /**
-     * Este método le solicita al usuario un código de producto y despliega la información sobre el producto especificado.
+     * Este método le solicita al usuario un código de producto y despliega la información sobre el
+     * producto especificado.
      */
     public void displayProductInfo() {
 
@@ -51,7 +94,6 @@ public class GourmetCoffee {
         System.out.println("  Description: " + product.getDescription());
         System.out.println("  Price: " + ANSI_BLUE + " $" + product.getPrice() + ANSI_RESET);
 
-        Text.displayProduct(product);
     }
 
     /**
@@ -173,6 +215,30 @@ public class GourmetCoffee {
 
     }
 
+    private String readFilename() throws IOException {
+
+        System.out.print("Filename> ");
+        return stdIn.nextLine();
+
+    }
+
+    public void saveSales() throws IOException {
+
+        int choice = getDisplaySaveOption();
+
+            if (choice == 1) {
+                salesFormat = PlainTextSalesFormat.getSingletonInstance();
+                writeFile(readFilename(), salesFormat.formatSales(sales));
+            } else if (choice == 2) {
+                salesFormat = HTMLSaleFormat.getSingletonInstance();
+                writeFile(readFilename(), salesFormat.formatSales(sales));
+            } else if (choice == 3) {
+                salesFormat = XMLSalesFormat.getSingletonInstance();
+                writeFile(readFilename(), salesFormat.formatSales(sales));
+            }
+
+    }
+
     /**
      * Despliega la cantidad total que ha sido vendida de cada uno de los productos en el catálogo
      */
@@ -184,7 +250,6 @@ public class GourmetCoffee {
                 OrderItem item = orden.getItem(product);
                 if (item != null) {
                     quantity += item.getQuantity();
-                    ;
                 }
             }
             if (quantity > 0)
@@ -192,99 +257,6 @@ public class GourmetCoffee {
         }
     }
 
-    /**
-     * Crea un catálogo vacío y luego le agrega productos.
-     *
-     * @return catalogo
-     */
-    private Catalog addCatalog() {
-
-        Catalog catalog = Catalog.getSingletonInstance();
-
-        catalog.addProduct(new Coffee(
-                "C001", "Colombia, Whole, 1 lb", 17.99,
-                "Colombia", "Medium", "Rich and Hearty", "Rich", "Medium", "Full"));
-        catalog.addProduct(new Coffee(
-                "C002", "Colombia, Ground, 1 lb", 18.75,
-                "Colombia", "Medium", "Rich and Hearty", "Rich", "Medium", "Full"));
-        catalog.addProduct(new Coffee(
-                "C003", "Italian Roasts, Whole, 1 lb", 16.80,
-                "Latin American Blend", "Italian Roast", "Dark and heavy",
-                "Intense", "Low", "Medium"));
-        catalog.addProduct(new Coffee(
-                "C004", "Italian Roasts, Ground, 1 lb", 17.55,
-                "Latin American Blend", "Italian Roast", "Dark and heavy",
-                "Intense", "Low", "Medium"));
-        catalog.addProduct(new Coffee(
-                "C005", "French Roasts, Whole, 1 lb", 16.80,
-                "Latin American Blend", "French Roast", "Bittersweet, full intense",
-                "Intense, full", "None", "Medium"));
-        catalog.addProduct(new Coffee(
-                "C006", "French Roast, Ground, 1 lb", 17.55,
-                "Latin American Blend", "French Roast", "Bittersweet, full intense",
-                "Intense, full", "None", "Medium"));
-        catalog.addProduct(new Coffee(
-                "C007", "Guatemala, Whole, 1 lb", 17.99,
-                "Guatemala", "Medium", "Rich and complex",
-                "Spicy", "Medium to high", "Medium to high"));
-        catalog.addProduct(new Coffee(
-                "C008", "Guatemala, Ground, 1 lb", 18.75,
-                "Guatemala", "Medium", "Rich and complex",
-                "Spicy", "Medium to high", "Medium to full"));
-        catalog.addProduct(new Coffee(
-                "C009", "Sumatra, Whole, 1 lb", 19.99,
-                "Sumatra", "Medium", "Vibrant and powdery",
-                "Like dark chocolate", "Gentle", "Rich and full"));
-        catalog.addProduct(new Coffee(
-                "C010", "Sumatra, Ground, 1 lb", 20.50,
-                "Sumatra", "Medium", "Vibrant and powdery",
-                "Like dark chocolate", "Gentle", "_Rich and full"));
-        catalog.addProduct(new Coffee(
-                "C011", "Decaf Blend, Whole, 1 lb", 16.80,
-                "Latin American Blend", "Dark roast", "Full, roasted flavor",
-                "Hearty", "Bold and rich", "Full"));
-        catalog.addProduct(new Coffee(
-                "C012", "French Roast, Ground, 1 lb", 17.55,
-                "Latin American Blend", "Dark roast", "Full, roasted flavo",
-                "Hearty", "Bold and rich", "Full"));
-
-        catalog.addProduct(new CoffeeBrewer(
-                "B001", "Home Coffee Brewer", 150.00,
-                "Brewer 100", "Pourover", 6));
-        catalog.addProduct(new CoffeeBrewer(
-                "B002", "Coffee Brewer, 2 Warmers", 200.00,
-                "Brewer 200", "Pourover", 12));
-        catalog.addProduct(new CoffeeBrewer(
-                "B003", "Coffee Brewer, 3 Warmers", 280.00,
-                "Brewer 210", "Pourover", 12));
-        catalog.addProduct(new CoffeeBrewer(
-                "B004", "Commercial Coffee, 20 Cups", 380.00,
-                "Quick Coffee 100", "Automatic", 20));
-        catalog.addProduct(new CoffeeBrewer(
-                "B005", "Commercial Coffee, 40 Cups", 480.00,
-                "Quick Coffee 200", "Automatic", 40));
-
-        catalog.addProduct(
-                new Product("A001", "Almond Flavored Syrup", 9.00));
-        catalog.addProduct(
-                new Product("A002", "Irish Creme Flavored Syrup", 9.00));
-        catalog.addProduct(
-                new Product("A003", "Mint Flavored syrup", 9.00));
-        catalog.addProduct(
-                new Product("A004", "Caramel Flavored Syrup", 9.00));
-        catalog.addProduct(
-                new Product("A005", "Gourmet Coffee Cookies", 12.00));
-        catalog.addProduct(
-                new Product("A006", "Gourmet Coffee Travel Thermo", 18.00));
-        catalog.addProduct(
-                new Product("A007", "Gourmet Coffee Ceramic Mug", 8.00));
-        catalog.addProduct(
-                new Product("A008", "Gourmet Coffee 12 Cup Filters", 15.00));
-        catalog.addProduct(
-                new Product("A009", "Gourmet Coffee 36 Cup Filters", 45.00));
-
-        return catalog;
-    }
 
     /**
      * Solicita al usuario la entrada del codigo de producto
@@ -340,12 +312,12 @@ public class GourmetCoffee {
      * Presenta al usuario una terminal con las opcones de la aplicacion
      */
 
-    private int getDisplayOption() {
+    private int getDisplaySaveOption() {
         while (true) {
             try {
-                String cadena = "\t Choose the display style ";
-                cadena += "\n[1]: JSON";
-                cadena += "\n[2]: Texto";
+                String cadena = "\t Choose the display save style ";
+                cadena += "\n[1]: Plain Text";
+                cadena += "\n[2]: HTML";
                 cadena += "\n[3]: XML";
                 cadena += "\n\n Choose> ";
                 System.out.print(cadena);
@@ -361,21 +333,6 @@ public class GourmetCoffee {
         }
     }
 
-    private void setStrategy() {
-        int opcion = getDisplayOption();
-        switch (opcion) {
-
-            case 1:
-                formato = new JSON();
-                break;
-            case 2:
-                formato = new Text();
-                break;
-            case 3:
-                formato = new XML();
-                break;
-        }
-    }
 
     private int getOption() {
         do {
@@ -391,8 +348,9 @@ public class GourmetCoffee {
                                 "[5] Remove product from current order\n" +
                                 "[6] Register sale of current order\n" +
                                 "[7] Display sales\n" +
-                                "[8] Display number of orders with a specific product\n" +
-                                "[9] Display the total quantity sold for each product\n" +
+                                "[8] Save sales\n" +
+                                "[9] Display number of orders with a specific product\n" +
+                                "[10] Display the total quantity sold for each product\n" +
                                 "\n" +
                                 "Choose> " + ANSI_RESET);
 
@@ -404,7 +362,7 @@ public class GourmetCoffee {
         } while (true);
     }
 
-    private void principal() {
+    private void principal() throws IOException {
         while (true) {
             int option = getOption();
             switch (option) {
@@ -414,9 +372,10 @@ public class GourmetCoffee {
                 case 4 -> addModifyProduct();
                 case 5 -> removeProduct();
                 case 6 -> saleOrder();
-                case 7 -> displayOrdersSold();
-                case 8 -> displayNumberOfOrders(getProductCode());
-                case 9 -> displayTotalQuantityOfProducts();
+                case 7 -> saveSales();
+                case 8 -> displayOrdersSold();
+                case 9 -> displayNumberOfOrders(getProductCode());
+                case 10 -> displayTotalQuantityOfProducts();
                 case 0 -> {
                     System.out.println(" Proceso finalizado ");
                     return;
@@ -432,10 +391,27 @@ public class GourmetCoffee {
      * @param args
      */
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        GourmetCoffee application = new GourmetCoffee();
+        Catalog catalog = null;
+
+
+        try {
+            catalog = (new FileCatalogLoader()).loadCatalog("catalog.dat");
+
+        } catch (FileNotFoundException fnfe) {
+            System.out.println("The file does not exist");
+
+            System.exit(1);
+
+        } catch (DataFormatException dfe) {
+            System.out.println("The file contains malformed data: "
+                    + dfe.getMessage());
+            System.exit(1);
+        }
+
+        GourmetCoffee application = new GourmetCoffee(catalog);
         application.principal();
-
     }
 }
+
