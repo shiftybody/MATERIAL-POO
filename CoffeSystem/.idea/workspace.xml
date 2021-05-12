@@ -5,24 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9776efa1-c286-4b52-b11b-6167dd114b33" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/CatalogLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataFormatException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FileCatalogLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/HTMLSaleFormat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PlainTextSalesFormat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SalesFormat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/XMLSalesFormat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/CoffeeBrewer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/CoffeeBrewer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/Catalog.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/Catalog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/DataFormatException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/DataFormatException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/FileCatalogLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/FileCatalogLoader.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/GourmetCoffee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/GourmetCoffee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/JSON.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/Text.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/XML.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/HTMLSaleFormat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/HTMLSaleFormat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/PlainTextSalesFormat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/PlainTextSalesFormat.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/XMLSalesFormat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Catalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Catalog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CatalogLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Coffee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Coffee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CoffeeBrewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoffeeBrewer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFormatException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFormatException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileCatalogLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileCatalogLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GourmetCoffee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GourmetCoffee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JSON.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Text.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/XML.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HTMLSaleFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HTMLSaleFormat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IFormato.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PlainTextSalesFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlainTextSalesFormat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sales.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SalesFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SalesFormat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/XMLSalesFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/XMLSaleFormat.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +76,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ArregloAlumnos" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -190,7 +196,9 @@
       <workItem from="1620709827793" duration="19000" />
       <workItem from="1620741012581" duration="13000" />
       <workItem from="1620749230530" duration="7702000" />
-      <workItem from="1620772103916" duration="13015000" />
+      <workItem from="1620772103916" duration="13321000" />
+      <workItem from="1620823569069" duration="3271000" />
+      <workItem from="1620827039594" duration="12711000" />
     </task>
     <servers />
   </component>

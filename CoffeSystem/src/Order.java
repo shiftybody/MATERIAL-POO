@@ -8,7 +8,7 @@ import java.util.Iterator;
  * Implementando la interfaz Iterable<OrderItem>
  *
  * @author Shiftybody
- * @version 0.2
+ * @version 0.0.2
  */
 
 public class Order implements Iterable<OrderItem> {

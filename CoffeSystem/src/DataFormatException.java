@@ -1,25 +1,21 @@
 /**
- * This exception is thrown when malformed data is detected while
- * a file being parsed.
+ *Excepcion que se lanza cuando:
  *
- * @author author name
- * @version 1.0.0
+ *  La línea no tiene el número de tokens esperado
+ *  Los tokens se deben contener números, no lo hacen
+ *
+ * Derivada de la clase Exception cómo una excepción propia
+ *
+ * @author author Shiftybody
+ * @version 0.0.2
  */
 public class DataFormatException extends Exception  {
 
     /**
-     * Constructs a <code>DataFormatException</code> with no detail
-     * message.
-     */
-    public DataFormatException() {
-
-    }
-
-    /**
-     * Constructs a <code>DataFormatException</code> with the
-     * specified detail message.
+     * Esta excepción se lanza con un NumberFormatException
+     * o un Array IndexOutofbounds
      *
-     * @param message  the malformed data
+     * @param message devuelve la linea donde se encontro la excepción
      */
     public DataFormatException(String message) {
         super(message);

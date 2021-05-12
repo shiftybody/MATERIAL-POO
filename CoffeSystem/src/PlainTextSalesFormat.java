@@ -1,9 +1,19 @@
+/**
+ * clase que implementa la interfaz SalesFormat
+ * para generar el formato PlainText de una Venta
+ *
+ * @author Shiftybody
+ * @version 0.0.2
+ */
+public class PlainTextSalesFormat implements SalesFormat {
 
-public class PlainTextSalesFormat implements SalesFormat
-{
-    private static final String NEW_LINE;
     private static PlainTextSalesFormat singletonInstance;
 
+    /**
+     * Método para obtener una instancia unica de PlainTextSaleFormat
+     *
+     * @return singletonInstance
+     */
     public static PlainTextSalesFormat getSingletonInstance() {
 
         if (PlainTextSalesFormat.singletonInstance == null) {
@@ -12,32 +22,35 @@ public class PlainTextSalesFormat implements SalesFormat
         return PlainTextSalesFormat.singletonInstance;
     }
 
-    private PlainTextSalesFormat() {
 
+    /**
+     * Constructor privado de esta clase
+     */
+    private PlainTextSalesFormat() {
     }
 
-    public String formatSales(final Sales sales) {
-        String string = "";
-        int n = 0;
+    /**
+     * Método que produce un String con el formato PlainText establecido en este ejercicio
+     *
+     * @param sales un objeto de la clase Sales
+     * @return Representación de las ventas con formato PlainText
+     */
+    public String formatSales(Sales sales) {
+        String plainText = "";
+        int nOrder = 0;
+
         for (Order order : sales) {
-            String s = string + "------------------------" +
-                    PlainTextSalesFormat.NEW_LINE + "Order " + ++n
-                    + PlainTextSalesFormat.NEW_LINE +
-                    PlainTextSalesFormat.NEW_LINE;
+            String line = plainText + "------------------------\n" +
+                    "Order " + ++nOrder + "\n\n";
 
             for (OrderItem orderItem : order) {
-                s = s + orderItem.getQuantity() + " " +
-                        orderItem.getProduct().getCode() + " "
-                        + orderItem.getProduct().getPrice() +
-                        PlainTextSalesFormat.NEW_LINE;
-            }
-            string = s + PlainTextSalesFormat.NEW_LINE + "Total = " + order.getTotalCost() + PlainTextSalesFormat.NEW_LINE;
-        }
-        return string;
-    }
 
-    static {
-        NEW_LINE = System.getProperty("line.separator");
-        PlainTextSalesFormat.singletonInstance = null;
+                line += orderItem.getQuantity() + " " +
+                        orderItem.getProduct().getCode() + " " +
+                        orderItem.getProduct().getPrice() + "\n";
+            }
+            plainText = line + "\nTotal = " + order.getTotalCost() + "\n";
+        }
+        return plainText;
     }
 }

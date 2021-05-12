@@ -4,7 +4,7 @@
  * de la tienda de Cafe Gourmet.
  *
  * @author Shiftybody
- * @version 0.1
+ * @version 0.0.2
  */
 
 public class Product {

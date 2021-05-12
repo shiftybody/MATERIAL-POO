@@ -1,5 +1,11 @@
 import java.io.*;
 import java.util.*;
+/**
+ * Clase que modela un sistema de cafe gourmet
+ *
+ * @author Shiftybody
+ * @version 0.0.2
+ */
 
 public class GourmetCoffee {
 
@@ -15,34 +21,14 @@ public class GourmetCoffee {
     private Order currentOrder;
     private SalesFormat salesFormat;
 
-    private void loadSales() {
-        Order orderOne = new Order();
-        Product productOne = catalog.getProduct("C001");
-
-        if (productOne != null) {
-            orderOne.addItem(new OrderItem(productOne, 5));
-            sales.addOrder(orderOne);
-        }
-
-        Order orderTwo = new Order();
-        Product productTwo = catalog.getProduct("C002");
-        Product productThree = catalog.getProduct("A001");
-
-        if ((productTwo != null) && (productThree != null)) {
-            orderTwo.addItem(new OrderItem(productTwo, 2));
-            orderTwo.addItem(new OrderItem(productThree, 2));
-            sales.addOrder(orderTwo);
-        }
-
-        Order orderThree = new Order();
-        Product productFour = catalog.getProduct("B002");
-
-        if (productFour != null) {
-            orderThree.addItem(new OrderItem(productFour, 1));
-            sales.addOrder(orderThree);
-        }
-    }
-
+    /**
+     * Crea un nuevo archivo con un nombre obtenido desde getFileName()
+     * y guarda el contenido
+     *
+     * @param filename nombre del archivo que guardara la informacion de ventas
+     * @param content String con el contenido enviado desde salesFormat
+     * @throws IOException si ocurre algun error al generar el archivo
+     */
     private void writeFile(String filename, String content)
             throws IOException {
 
@@ -55,14 +41,12 @@ public class GourmetCoffee {
     /**
      * Inicia los atributos catalog, currentOrder y sales.
      */
-    public GourmetCoffee(Catalog initialCatalog) {
+    public GourmetCoffee(Catalog catalog) {
 
-        catalog = initialCatalog;
+        this.catalog = catalog;
         sales = new Sales();
-        salesFormat = PlainTextSalesFormat.getSingletonInstance();
-        loadSales();
-
         currentOrder = new Order();
+
     }
 
     /**
@@ -77,8 +61,9 @@ public class GourmetCoffee {
         } else {
             for (Product product : catalog) {
 
-                System.out.println(product.getCode() + " "
-                        + product.getDescription());
+                System.out.println(product.getCode() + " " +
+                        product.getDescription() + " " +
+                        ANSI_BLUE + "$" + product.getPrice() + ANSI_RESET);
             }
         }
     }
@@ -94,6 +79,25 @@ public class GourmetCoffee {
         System.out.println("  Description: " + product.getDescription());
         System.out.println("  Price: " + ANSI_BLUE + " $" + product.getPrice() + ANSI_RESET);
 
+        if (product instanceof Coffee) {
+
+            Coffee coffee = (Coffee) product;
+
+            System.out.println("  Origin: " + coffee.getOrigin());
+            System.out.println("  Roast: " + coffee.getRoast());
+            System.out.println("  Flavor: " + coffee.getFlavor());
+            System.out.println("  Aroma: " + coffee.getAroma());
+            System.out.println("  Acidity: " + coffee.getAcidity());
+            System.out.println("  Body: " + coffee.getBody());
+
+        } else if (product instanceof CoffeeBrewer) {
+
+            CoffeeBrewer brewer = (CoffeeBrewer) product;
+
+            System.out.println("  Model: " + brewer.getModel());
+            System.out.println("  Water Supply: " + brewer.getWaterSupply());
+            System.out.println("  Number of Cups: " + brewer.getNumberOfCups());
+        }
     }
 
     /**
@@ -194,9 +198,32 @@ public class GourmetCoffee {
     }
 
     /**
+     * llama a getDisplaySaveOption y segun la respuesta del usuario
+     * y el nombre de archivo genera el formato  PlainText, HTML o XML.
+     *
+     * @throws IOException si ocurre algun error
+     */
+    public void saveSales() throws IOException {
+
+        int choice = getDisplaySaveOption();
+
+        if (choice == 1) {
+            salesFormat = PlainTextSalesFormat.getSingletonInstance();
+            writeFile(getFileName(), salesFormat.formatSales(sales));
+        } else if (choice == 2) {
+            salesFormat = HTMLSaleFormat.getSingletonInstance();
+            writeFile(getFileName(), salesFormat.formatSales(sales));
+        } else if (choice == 3) {
+            salesFormat = XMLSaleFormat.getSingletonInstance();
+            writeFile(getFileName(), salesFormat.formatSales(sales));
+        }
+
+    }
+
+    /**
      * Despliega el número de órdenes que contienen el producto especificado
      *
-     * @param product
+     * @param product recibe un tipo producto para enviar como parametro a getItem() de Order
      */
     public void displayNumberOfOrders(Product product) {
 
@@ -215,29 +242,6 @@ public class GourmetCoffee {
 
     }
 
-    private String readFilename() throws IOException {
-
-        System.out.print("Filename> ");
-        return stdIn.nextLine();
-
-    }
-
-    public void saveSales() throws IOException {
-
-        int choice = getDisplaySaveOption();
-
-            if (choice == 1) {
-                salesFormat = PlainTextSalesFormat.getSingletonInstance();
-                writeFile(readFilename(), salesFormat.formatSales(sales));
-            } else if (choice == 2) {
-                salesFormat = HTMLSaleFormat.getSingletonInstance();
-                writeFile(readFilename(), salesFormat.formatSales(sales));
-            } else if (choice == 3) {
-                salesFormat = XMLSalesFormat.getSingletonInstance();
-                writeFile(readFilename(), salesFormat.formatSales(sales));
-            }
-
-    }
 
     /**
      * Despliega la cantidad total que ha sido vendida de cada uno de los productos en el catálogo
@@ -257,11 +261,21 @@ public class GourmetCoffee {
         }
     }
 
+    /**
+     * Solicita al usuario el nombre del archivo
+     * que almacenara la Venta
+     *
+     * @return el nombre del archivo que guardara la informacion de Venta
+     */
+    private String getFileName()  {
+        System.out.print("FileName: ");
+        return stdIn.nextLine();
+    }
 
     /**
      * Solicita al usuario la entrada del codigo de producto
      *
-     * @return
+     * @return el codigo de producto
      */
     private Product getProductCode() {
 
@@ -282,7 +296,7 @@ public class GourmetCoffee {
     /**
      * Solicita al usuario la cantidad de producto
      *
-     * @return
+     * @return la catidad de producto
      */
     private int getQuantity() {
 
@@ -309,31 +323,43 @@ public class GourmetCoffee {
     }
 
     /**
-     * Presenta al usuario una terminal con las opcones de la aplicacion
+     * Solicita al usuario el formato para guardar las ordenes de venta
+     *
+     * @return la opcion indicada por el usuario para el formato de salida
      */
-
     private int getDisplaySaveOption() {
+
+        int opc;
+
         while (true) {
             try {
-                String cadena = "\t Choose the display save style ";
+                String cadena = "\t Choice the display save style \n";
                 cadena += "\n[1]: Plain Text";
                 cadena += "\n[2]: HTML";
                 cadena += "\n[3]: XML";
-                cadena += "\n\n Choose> ";
+                cadena += "\n\n Choice> ";
                 System.out.print(cadena);
 
-                int opc = Integer.parseInt(stdIn.nextLine());
-                if (opc >= 0 && opc <= 9) {
-                    return opc;
+                opc = Integer.parseInt(stdIn.nextLine());
+
+                if (0 < opc && 3 >= opc)  {
+                    break;
+                } else {
+                    System.out.print("Invalid choice:  " + opc);
                 }
 
-            } catch (Exception ioe) {
-                ioe.printStackTrace();
+            } catch (NumberFormatException nfe) {
+                System.out.println("Error > " + nfe.getMessage());
             }
         }
+        return opc;
     }
 
-
+    /**
+     * Menú con las opciones que modelan el sistema de cafe gourmet
+     *
+     * @return un entero que representa la accion a realizar dentro del sistema
+     */
     private int getOption() {
         do {
             try {
@@ -352,7 +378,7 @@ public class GourmetCoffee {
                                 "[9] Display number of orders with a specific product\n" +
                                 "[10] Display the total quantity sold for each product\n" +
                                 "\n" +
-                                "Choose> " + ANSI_RESET);
+                                "Choice> " + ANSI_RESET);
 
                 return Integer.parseInt(stdIn.nextLine());
 
@@ -362,6 +388,13 @@ public class GourmetCoffee {
         } while (true);
     }
 
+    /**
+     *
+     * llama al método de la clase GourmetCoffee
+     * según la opción del menú indicada por el usuario
+     *
+     * @throws IOException en caso de que ocurra algun error
+     */
     private void principal() throws IOException {
         while (true) {
             int option = getOption();
@@ -372,8 +405,8 @@ public class GourmetCoffee {
                 case 4 -> addModifyProduct();
                 case 5 -> removeProduct();
                 case 6 -> saleOrder();
-                case 7 -> saveSales();
-                case 8 -> displayOrdersSold();
+                case 7 -> displayOrdersSold();
+                case 8 -> saveSales();
                 case 9 -> displayNumberOfOrders(getProductCode());
                 case 10 -> displayTotalQuantityOfProducts();
                 case 0 -> {
@@ -386,30 +419,31 @@ public class GourmetCoffee {
     }
 
     /**
-     * Inicia la aplicación
      *
-     * @param args
+     * Comienza la aplicación verificando si existe el archivo catalog.dat
+     * y no existen errores en el formato de los datos dentro del archivo.
+     *
+     * @param args argumentos String[]
      */
-
     public static void main(String[] args) throws IOException {
 
         Catalog catalog = null;
-
 
         try {
             catalog = (new FileCatalogLoader()).loadCatalog("catalog.dat");
 
         } catch (FileNotFoundException fnfe) {
-            System.out.println("The file does not exist");
-
+            System.out.println("The file doesn´t exist");
+            //terminamos la MVJ
             System.exit(1);
 
         } catch (DataFormatException dfe) {
-            System.out.println("The file contains malformed data: "
+            System.out.println("The file contains badly formulated data in line: "
                     + dfe.getMessage());
             System.exit(1);
         }
 
+        // si no se termina la MVJ continuamos a despelgar el menú de la aplicacion.
         GourmetCoffee application = new GourmetCoffee(catalog);
         application.principal();
     }

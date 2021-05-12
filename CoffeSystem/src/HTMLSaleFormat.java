@@ -1,11 +1,19 @@
-
+/**
+ * clase que implementa la interfaz SalesFormat
+ * para generar el formato HTML de una Venta
+ *
+ * @author Shiftybody
+ * @version 0.0.2
+ */
 public class HTMLSaleFormat implements SalesFormat {
 
-
-    private static final String NEW_LINE;
     private static HTMLSaleFormat singletonInstance;
 
-
+    /**
+     * Método para obtener una instancia unica de HTMLSaleFormat
+     *
+     * @return singletonInstance
+     */
     public static HTMLSaleFormat getSingletonInstance() {
 
         if (HTMLSaleFormat.singletonInstance == null) {
@@ -14,25 +22,38 @@ public class HTMLSaleFormat implements SalesFormat {
         return HTMLSaleFormat.singletonInstance;
     }
 
-
+    /**
+     * Constructor privado de esta clase
+     */
     private HTMLSaleFormat() {
 
     }
 
-    public String formatSales(final Sales sales) {
-        String str =
-                "<html>" + HTMLSaleFormat.NEW_LINE + "  <body>" + HTMLSaleFormat.NEW_LINE + "    <center><h2>Orders</h2></center>" + HTMLSaleFormat.NEW_LINE;
+    /**
+     * Método que produce un String con el formato HTML
+     *
+     * @param sales un objeto de la clase Sales
+     * @return Representación de las ventas con formato HTML
+     */
+    public String formatSales(Sales sales) {
+        String html =
+                "<html>\n" +
+                        "  <body>\n" +
+                        "    <center><h2>Orders</h2></center>\n";
+
         for (Order order : sales) {
-            str = str + "    <hr>" + HTMLSaleFormat.NEW_LINE + "    <h4>Total = " + order.getTotalCost() + "</h4>" + HTMLSaleFormat.NEW_LINE;
+            html += "    <hr>\n" + "    <h4>Total = " + order.getTotalCost() + "</h4>\n";
+
             for (OrderItem orderItem : order) {
-                str = str + "      <p>" + HTMLSaleFormat.NEW_LINE + "        <b>code:</b> " + orderItem.getProduct().getCode() + "<br>" + HTMLSaleFormat.NEW_LINE + "        <b>quantity:</b> " + orderItem.getQuantity() + "<br>" + HTMLSaleFormat.NEW_LINE + "        <b>price:</b> " + orderItem.getProduct().getPrice() + HTMLSaleFormat.NEW_LINE + "      </p>" + HTMLSaleFormat.NEW_LINE;
+                html += "      <p>\n" +
+                        "        <b>code:</b> " + orderItem.getProduct().getCode() + "<br>\n" +
+                        "        <b>quantity:</b> " + orderItem.getQuantity() + "<br>\n" +
+                        "        <b>price:</b> " + orderItem.getProduct().getPrice() + "\n" +
+                        "      </p>\n";
             }
         }
-        return str + "  </body>" + HTMLSaleFormat.NEW_LINE + "</html>";
-    }
-
-    static {
-        NEW_LINE = System.getProperty("line.separator");
-        HTMLSaleFormat.singletonInstance = null;
+        return html +
+                "  </body>\n" +
+                "</html>";
     }
 }

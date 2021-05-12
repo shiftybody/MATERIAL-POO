@@ -2,15 +2,16 @@
 import java.util.ArrayList;
 import java.util.Iterator;
 
-
+/**
+ * Clase que modela un catalogo de productos
+ *
+ * @author Shiftybody
+ * @version 0.0.2
+ */
 public class Catalog implements Iterable<Product> {
 
-    private static Catalog singLetonCatalog = null;
+    private static Catalog singLetonCatalog;
     private final ArrayList<Product> products = new ArrayList<>();
-
-    private Catalog() {
-
-    }
 
     /**
      * Implementación del patrón Singleton
@@ -23,6 +24,13 @@ public class Catalog implements Iterable<Product> {
             singLetonCatalog = new Catalog();
         }
         return singLetonCatalog;
+    }
+
+    /**
+     * Constructor innaccible para otras clases
+     */
+    private Catalog() {
+
     }
 
     /**

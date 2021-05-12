@@ -7,7 +7,7 @@ import java.util.Iterator;
  * Implementa la interfaz Iterable<Order>
  *
  * @author Shiftybody
- * @version 0.2
+ * @version 0.0.2
  */
 
 public class Sales implements Iterable<Order> {

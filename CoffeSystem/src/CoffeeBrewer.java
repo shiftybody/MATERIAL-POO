@@ -3,7 +3,7 @@
  * modela una máquina de preparación de café
  *
  * @author Shiftybody
- * @version 0.1
+ * @version 0.0.2
  */
 
 public class CoffeeBrewer extends Product {
