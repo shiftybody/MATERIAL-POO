@@ -28,15 +28,15 @@ public class FileCatalogLoader implements CatalogLoader {
      */
     private Product readProduct(String line) throws DataFormatException{
         //para este caso en lugar de almacenarlo en un array cómo en ejercicios anteriores
-        //podemos utilizar la función miebro nextToken().
+        //podemos utilizar la función miembro nextToken().
         StringTokenizer st = new StringTokenizer(line, separator);
 
         if (st.countTokens() != 4) {
-            throw new DataFormatException(line);
+            throw new DataFormatException("Expected in:  " + line + "\n  Format: Product_code_description_price");
 
         } else {
             try {
-                String prefix = st.nextToken();
+                st.nextToken();
                 String code = st.nextToken();
                 String description = st.nextToken();
                 double price = Double.parseDouble(st.nextToken());
@@ -45,7 +45,7 @@ public class FileCatalogLoader implements CatalogLoader {
 
             }catch(NumberFormatException  nfe){
                 // lanzamos la excepción DataFormatException cuando existe un NumberFormatException
-                throw new DataFormatException(line);
+                throw new DataFormatException("Expected in:  " + line + "\n  Price double type");
             }
         }
     }
@@ -62,11 +62,12 @@ public class FileCatalogLoader implements CatalogLoader {
         StringTokenizer st = new StringTokenizer(line, separator);
 
         if (st.countTokens() != 10) {
-            throw new DataFormatException(line);
+            throw new DataFormatException("Expected in:  " + line +
+                    "\n  Format: Coffee_code_description_price_origin_roast_flavor_aroma_acidity_body");
 
         } else {
             try {
-                String prefix = st.nextToken();
+                st.nextToken();
                 String code = st.nextToken();
                 String description = st.nextToken();
                 double price = Double.parseDouble(st.nextToken());
@@ -81,7 +82,7 @@ public class FileCatalogLoader implements CatalogLoader {
                         roast,flavor,aroma,acidity,body);
 
             }catch(NumberFormatException  nfe){
-                throw new DataFormatException(line);
+                throw new DataFormatException("Expected in:  " + line + "\n  Price double type");
             }
         }
     }
@@ -98,11 +99,12 @@ public class FileCatalogLoader implements CatalogLoader {
         StringTokenizer st = new StringTokenizer(line, separator);
 
         if (st.countTokens() != 7) {
-            throw new DataFormatException(line);
+            throw new DataFormatException("Expected in:  " + line +
+                    "\n  Format: CoffeeBrewer_code_description_price_model_waterSupply_numberOfCups");
 
         } else {
             try {
-                String prefix = st.nextToken();
+                st.nextToken();
                 String code = st.nextToken();
                 String description = st.nextToken();
                 double price = Double.parseDouble(st.nextToken());
@@ -114,7 +116,7 @@ public class FileCatalogLoader implements CatalogLoader {
                         model,waterSupply,numberOfCups);
 
             }catch(NumberFormatException  nfe){
-                throw new DataFormatException(line);
+                throw new DataFormatException("Expected in:  " + line + "\n  Price Double | numberOfCups Integer");
             }
         }
     }
