@@ -27,7 +27,9 @@ public class Catalog implements Iterable<Product> {
     }
 
     /**
-     * Constructor innaccible para otras clases
+     * Constructor inaccecible para otras clases
+     * Se consdera una buena práctica agregar un costructor por defecto.
+     * Y aun más porque en este caso es privado.
      */
     private Catalog() {
 

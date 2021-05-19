@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.*;
+
 /**
  * Clase FileCatalogLoader que implementa CatalogLoader.
  * Se utiliza para obtener un catágolo de productos desde un archivo
@@ -151,7 +152,7 @@ public class FileCatalogLoader implements CatalogLoader {
             } else if (line.startsWith(brewPref)) {
                 product = readCoffeeBrewer(line);
             } else {
-                throw new DataFormatException(line);
+                throw new DataFormatException("Prefix espected in: " + line);
             }
 
             catalog.addProduct(product);

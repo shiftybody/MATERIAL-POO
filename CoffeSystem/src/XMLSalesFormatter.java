@@ -5,26 +5,26 @@
  * @author Shiftybody
  * @version 0.0.2
  */
-public class XMLSaleFormat implements SalesFormat {
-    private static XMLSaleFormat singletonInstance;
+public class XMLSalesFormatter implements SalesFormatter {
+    private static XMLSalesFormatter singletonInstance;
 
     /**
      *  Método para obtener una inStancia unica de XMLSaleFormat
      *
      * @return singletonInstance
      */
-    public static XMLSaleFormat getSingletonInstance() {
+    public static XMLSalesFormatter getSingletonInstance() {
 
-        if (XMLSaleFormat.singletonInstance == null) {
-            XMLSaleFormat.singletonInstance = new XMLSaleFormat();
+        if (singletonInstance == null) {
+            singletonInstance = new XMLSalesFormatter();
         }
-        return XMLSaleFormat.singletonInstance;
+        return singletonInstance;
     }
 
     /**
      * Constructor privado de esta clase
      */
-    private XMLSaleFormat() {
+    private XMLSalesFormatter() {
     }
 
     /**
