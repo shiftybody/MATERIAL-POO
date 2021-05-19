@@ -8,6 +8,7 @@ import java.util.Iterator;
  *
  * @author Shiftybody
  * @version 0.0.2
+ *
  */
 
 public class Sales implements Iterable<Order> {

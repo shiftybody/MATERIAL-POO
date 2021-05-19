@@ -5,6 +5,6 @@
  * @author Shiftybody
  * @version 0.0.2
  */
-public interface SalesFormat {
+public interface SalesFormatter {
     String formatSales(Sales sales);
 }

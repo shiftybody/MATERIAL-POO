@@ -5,30 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9776efa1-c286-4b52-b11b-6167dd114b33" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/CatalogFormatter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/JSONCatalogFormatter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PlainTextCatalogFormatter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/XMLCatalogFormatter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/Catalog.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/Catalog.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/DataFormatException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/DataFormatException.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/FileCatalogLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/FileCatalogLoader.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/GourmetCoffee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/GourmetCoffee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/HTMLSaleFormat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/HTMLSaleFormat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/PlainTextSalesFormat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/PlainTextSalesFormat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/XMLSalesFormat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/HTMLSaleFormat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/PlainTextSalesFormat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/SalesFormat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/XMLSaleFormat.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Catalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Catalog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CatalogLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CatalogLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Coffee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Coffee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CoffeeBrewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CoffeeBrewer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFormatException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFormatException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FileCatalogLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileCatalogLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GourmetCoffee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GourmetCoffee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HTMLSaleFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HTMLSaleFormat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IFormato.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PlainTextSalesFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlainTextSalesFormat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/HTMLSaleFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HTMLSalesFormatter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PlainTextSalesFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlainTextSalesFormatter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Sales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sales.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SalesFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SalesFormat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/XMLSalesFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/XMLSaleFormat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SalesFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SalesFormatter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/XMLSaleFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/XMLSalesFormatter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,15 +125,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -199,6 +194,14 @@
       <workItem from="1620772103916" duration="13321000" />
       <workItem from="1620823569069" duration="3271000" />
       <workItem from="1620827039594" duration="12711000" />
+      <workItem from="1620924317677" duration="4333000" />
+      <workItem from="1621019307143" duration="436000" />
+      <workItem from="1621032409879" duration="591000" />
+      <workItem from="1621216673007" duration="980000" />
+      <workItem from="1621217970878" duration="54000" />
+      <workItem from="1621354021459" duration="7362000" />
+      <workItem from="1621387228900" duration="5000" />
+      <workItem from="1621460208163" duration="5873000" />
     </task>
     <servers />
   </component>

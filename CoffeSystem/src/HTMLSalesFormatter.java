@@ -5,27 +5,27 @@
  * @author Shiftybody
  * @version 0.0.2
  */
-public class HTMLSaleFormat implements SalesFormat {
+public class HTMLSalesFormatter implements SalesFormatter {
 
-    private static HTMLSaleFormat singletonInstance;
+    private static HTMLSalesFormatter singletonInstance;
 
     /**
      * Método para obtener una instancia unica de HTMLSaleFormat
      *
      * @return singletonInstance
      */
-    public static HTMLSaleFormat getSingletonInstance() {
+    public static HTMLSalesFormatter getSingletonInstance() {
 
-        if (HTMLSaleFormat.singletonInstance == null) {
-            HTMLSaleFormat.singletonInstance = new HTMLSaleFormat();
+        if (singletonInstance == null) {
+            singletonInstance = new HTMLSalesFormatter();
         }
-        return HTMLSaleFormat.singletonInstance;
+        return singletonInstance;
     }
 
     /**
      * Constructor privado de esta clase
      */
-    private HTMLSaleFormat() {
+    private HTMLSalesFormatter() {
 
     }
 

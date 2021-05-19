@@ -5,28 +5,28 @@
  * @author Shiftybody
  * @version 0.0.2
  */
-public class PlainTextSalesFormat implements SalesFormat {
+public class PlainTextSalesFormatter implements SalesFormatter {
 
-    private static PlainTextSalesFormat singletonInstance;
+    private static PlainTextSalesFormatter singletonInstance;
 
     /**
      * Método para obtener una instancia unica de PlainTextSaleFormat
      *
      * @return singletonInstance
      */
-    public static PlainTextSalesFormat getSingletonInstance() {
+    public static PlainTextSalesFormatter getSingletonInstance() {
 
-        if (PlainTextSalesFormat.singletonInstance == null) {
-            PlainTextSalesFormat.singletonInstance = new PlainTextSalesFormat();
+        if (singletonInstance == null) {
+            singletonInstance = new PlainTextSalesFormatter();
         }
-        return PlainTextSalesFormat.singletonInstance;
+        return singletonInstance;
     }
-
 
     /**
      * Constructor privado de esta clase
      */
-    private PlainTextSalesFormat() {
+    private PlainTextSalesFormatter() {
+
     }
 
     /**
@@ -37,11 +37,11 @@ public class PlainTextSalesFormat implements SalesFormat {
      */
     public String formatSales(Sales sales) {
         String plainText = "";
-        int nOrder = 0;
+        int number = 0;
 
         for (Order order : sales) {
             String line = plainText + "------------------------\n" +
-                    "Order " + ++nOrder + "\n\n";
+                    "Order " + ++number + "\n\n";
 
             for (OrderItem orderItem : order) {
 
