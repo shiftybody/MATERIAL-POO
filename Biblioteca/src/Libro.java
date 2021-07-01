@@ -2,31 +2,36 @@ public class Libro extends Publicacion implements Prestable {
 
     private boolean prestado;
 
-    public Libro(String codigo, String titulo, int año) {
-        super(codigo, titulo, año);
-        prestado = false; // los libros cuando se crean no estan prestados;
+    public Libro(String code, String title, int year) {
+        super(code, title, year);
+        this.prestado = false;
+    }
+
+    public String getCode() {
+        return super.getCode();
     }
 
     @Override
     public void prestar() {
-        prestado = true;
+        this.prestado = true;
     }
 
     @Override
     public void devolver() {
-        prestado = false;
+        this.prestado = false;
     }
 
     @Override
-    public boolean prestado() {
-        return prestado;
+    public String prestado() {
+        if (this.prestado) {
+            return " No disponible";
+        } else {
+            return " Disponible";
+        }
     }
 
     @Override
     public String toString() {
-        return "Libro{" +
-                "prestado=" + prestado +
-                '}';
+        return super.getCode() + "   " + super.getTitle() + " (" + super.getYear() + ") " + prestado();
     }
-
 }

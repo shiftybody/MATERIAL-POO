@@ -1,5 +1,7 @@
 public interface Prestable {
-        void prestar();
-        void devolver();
-        boolean prestado();
+
+    void prestar();
+    void devolver();
+    String prestado();
+
 }

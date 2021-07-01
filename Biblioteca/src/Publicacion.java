@@ -1,55 +1,27 @@
-public class Publicacion {  // esta clase extiende de la clase libro y revista
+public class Publicacion {
 
-    // Caracteristicas comunes de libros y revistas
-    private String codigo;
-    private String titulo;
-    private int año;
+    private final String code;
+    private final String title;
+    private final int year;
 
-    /**
-     * pasamos como parametros al momento de crear los objetos
-     * @param codigo
-     * @param titulo
-     * @param anio
-     */
-    public Publicacion(String codigo, String titulo, int anio) {
+    public Publicacion(String code, String title, int year) {
 
-        this.codigo = codigo;
-        this.titulo = titulo;
-        this.año = anio;
+        this.code = code;
+        this.title = title;
+        this.year = year;
 
     }
 
-    public String getCodigo() {
-        return codigo;
+    public String getCode() {
+        return code;
     }
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
+    public String getTitle() {
+        return title;
     }
 
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public int getAño() {
-        return año;
-    }
-
-    public void setAño(int año) {
-        this.año = año;
-    }
-
-    @Override
-    public String toString() {
-        return "Publicacion{" +
-                "codigo='" + codigo + '\'' +
-                ", titulo='" + titulo + '\'' +
-                ", año=" + año +
-                '}';
+    public int getYear() {
+        return year;
     }
 
 }

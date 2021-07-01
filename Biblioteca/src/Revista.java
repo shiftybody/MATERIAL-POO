@@ -1,38 +1,33 @@
-public class Revista extends Publicacion implements Prestable{
+public class Revista extends Publicacion {
 
-    private final int numero;
+    private final int number;
+    public boolean disponible;
 
-    /**
-     *
-     * @param codigo
-     * @param titulo
-     * @param año
-     * @param numero
-     */
-    public Revista(String codigo, String titulo, int año, int numero) {
-        super(codigo, titulo, año);
-        this.numero = numero; // pasamos como parametro el numero al crearlo.
+    public Revista(String code, String title, int year, int number) {
+        super(code, title, year);
+        this.disponible = true;
+        this.number = number;
     }
 
-    @Override
-    public void prestar() {
-
+    public int getNumber() {
+        return number;
     }
 
-    @Override
-    public void devolver() {
 
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
     }
 
-    @Override
-    public boolean prestado() {
-        return false;
+    public String disponible() {
+        if (this.disponible) {
+            return " Disponible";
+        } else {
+            return " No disponible";
+        }
     }
 
     @Override
     public String toString() {
-        return "Revista{" +
-                "numero=" + numero +
-                '}';
+        return super.getCode() + "   " + super.getTitle() + " (" + super.getYear() + ") " + "#" + number + " " + disponible();
     }
 }
