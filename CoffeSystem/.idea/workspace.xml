@@ -5,27 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9776efa1-c286-4b52-b11b-6167dd114b33" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/CatalogFormatter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/JSONCatalogFormatter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/PlainTextCatalogFormatter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/XMLCatalogFormatter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/Catalog.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/Catalog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/DataFormatException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/DataFormatException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/FileCatalogLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/FileCatalogLoader.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/GourmetCoffee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/GourmetCoffee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/HTMLSaleFormat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/PlainTextSalesFormat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/SalesFormat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/XMLSaleFormat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Catalog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Catalog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FileCatalogLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileCatalogLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/CoffeSystem/Sales.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/CoffeSystem/Sales.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GourmetCoffee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GourmetCoffee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HTMLSaleFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/HTMLSalesFormatter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PlainTextSalesFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlainTextSalesFormatter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sales.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sales.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SalesFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SalesFormatter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/XMLSaleFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/XMLSalesFormatter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +63,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="ReaderModeSettings">
     <option name="showRenderedDocs" value="false" />
@@ -121,17 +105,6 @@
     <configuration name="TestSales" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="TestSales" />
       <module name="CoffeSystem" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -202,6 +175,12 @@
       <workItem from="1621354021459" duration="7362000" />
       <workItem from="1621387228900" duration="5000" />
       <workItem from="1621460208163" duration="5873000" />
+      <workItem from="1621959566316" duration="2512000" />
+      <workItem from="1622471907450" duration="147000" />
+      <workItem from="1622557816224" duration="345000" />
+      <workItem from="1623172391640" duration="5858000" />
+      <workItem from="1623199656205" duration="11599000" />
+      <workItem from="1623247084558" duration="483000" />
     </task>
     <servers />
   </component>

@@ -142,7 +142,14 @@ public class GourmetCoffee {
      */
     private void writeFile(String filename, String content)
             throws IOException {
-        PrintWriter fileOut = new PrintWriter(new FileWriter(filename));
+
+
+        /*PrintWriter fileOut = new PrintWriter(new FileWriter(filename));
+        fileOut.println(content);
+        fileOut.close();*/
+
+        FileWriter fw = new FileWriter(filename);
+        PrintWriter fileOut = new PrintWriter(fw);
         fileOut.println(content);
         fileOut.close();
 
@@ -162,7 +169,8 @@ public class GourmetCoffee {
      *
      * @throws IOException si ocurre algun error
      */
-    public void run() throws IOException {
+
+    private void setSaveStrategy() throws IOException {
 
         int choice = getChoice();
 
@@ -184,7 +192,7 @@ public class GourmetCoffee {
      */
     public void displayCatalog() {
 
-        this.setStrategy();
+        this.setCatalogStrategy();
         System.out.println(catalogFormatter.formatCatalog(catalog));
 
     }
@@ -217,7 +225,7 @@ public class GourmetCoffee {
     /**
      *
      */
-    private void setStrategy() {
+    private void setCatalogStrategy() {
         int opcion = getDisplayOption();
 
         switch (opcion) {
@@ -512,7 +520,7 @@ public class GourmetCoffee {
                 case 5 -> removeProduct();
                 case 6 -> saleOrder();
                 case 7 -> displaySales();
-                case 8 -> run();
+                case 8 -> setSaveStrategy();
                 case 9 -> displayNumberOfOrders(getProductCode());
                 case 10 -> displayTotalQuantityOfProducts();
                 case 0 -> {
