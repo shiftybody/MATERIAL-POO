@@ -1,70 +1,83 @@
-import com.sun.source.tree.CatchTree;
-
-import java.util.Locale;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class DNASequence {
 
+    private final String sequence;
+
     private int numberOfA;
     private int numberOfT;
     private int numberOfC;
     private int numberOfG;
 
-    private String DNA;
 
-    public void asignaDNA(String nuevoDNA) {
-        DNA = nuevoDNA;
+    public DNASequence(String initialSequence) {
+
+        sequence = initialSequence;
+        countNucleotides();
     }
+
 
     private void countNucleotides() {
 
-        for (int i = 0; i < DNA.length(); i++) {
+        int index = 0;
 
-            if (DNA.charAt(i) == 'A') numberOfA++;
-            else if (DNA.charAt(i) == 'T') numberOfT++;
-            else if (DNA.charAt(i) == 'C') numberOfC++;
-            else if (DNA.charAt(i) == 'G') numberOfG++;
+        while (index < sequence.length()) {
 
-        }
-    }
+            char nucleotide = sequence.charAt(index);
 
-    public boolean twoConsecutive(char input) {
-
-        boolean isConsecutive = false;
-
-        for (int i = 0; i < DNA.length(); i++) {
-
-
-            if (DNA.charAt(i) == input && DNA.charAt(i + 1) == input) {
-                isConsecutive = true;
-                break;
+            if (nucleotide == 'A') {
+                numberOfA++;
+            } else if (nucleotide == 'T') {
+                numberOfT++;
+            } else if (nucleotide == 'C') {
+                numberOfC++;
+            } else if (nucleotide == 'G') {
+                numberOfG++;
             }
+            index++;
         }
-        return isConsecutive;
+
     }
 
-    public int getNumberA() {
+
+    public int getNumberOfA() {
+
         return numberOfA;
     }
 
-    public int getNumberT() {
+
+    public int getNumberOfT() {
         return numberOfT;
     }
 
-    public int getNumberG() {
-        return numberOfG;
-    }
 
-    public int getNumberC() {
+    public int getNumberOfC() {
         return numberOfC;
     }
 
 
-    public static void main(String[] args) throws Exception {
+    public int getNumberOfG() {
+        return numberOfG;
+    }
 
-        DNASequence dna = new DNASequence();
+
+    public boolean twoConsecutive(char input) {
+
+        for (int i = 0; i < sequence.length(); i++) {
+
+            if (sequence.charAt(i) == input &&
+                sequence.charAt(i + 1) == input) {
+                return true;
+            }
+        }
+
+        return false;
+
+    }
+
+    public static void main(String[] args) {
 
         while (true) {
             try {
@@ -79,52 +92,59 @@ public class DNASequence {
 
                 Matcher mat = pat.matcher(DNA);
                 if (mat.matches()) {
-                    System.out.println("SI");
+
+                    DNASequence dna = new DNASequence(DNA + " ");
+
+                    System.out.println("La cantidad de A son " + dna.getNumberOfA());
+                    System.out.println("La cantidad de T son " + dna.getNumberOfC());
+                    System.out.println("La cantidad de G son " + dna.getNumberOfG());
+                    System.out.println("La cantidad de C son " + dna.getNumberOfT());
+                    System.out.println();
+
+                    dna.numberOfA = 0;
+                    dna.numberOfT = 0;
+                    dna.numberOfG = 0;
+                    dna.numberOfC = 0;
+
+                    if (dna.twoConsecutive('A')) {
+                        System.out.println(
+                        "EL ADN tiene moleculas de Adenina (A) consecutivas");
+                    } else {
+                        System.out.println(
+                        "EL ADN NO tiene moleculas de Adenina (A) consecutivas");
+                    }
+                    if (dna.twoConsecutive('T')) {
+                        System.out.println(
+                        "EL ADN tiene moleculas de Tiamina (T) consecutivas");
+                    } else {
+                        System.out.println(
+                        "EL ADN NO tiene moleculas de Tiamina (T) consecutivas");
+                    }
+                    if (dna.twoConsecutive('G')) {
+                        System.out.println(
+                        "EL ADN tiene moleculas de Guanina (G) consecutivas");
+                    } else {
+                        System.out.println(
+                        "EL ADN NO tiene moleculas de Guanina (G) consecutivas");
+                    }
+                    if (dna.twoConsecutive('C')) {
+                        System.out.println(
+                        "EL ADN tiene moleculas de Citosina (C) consecutivas");
+                    } else {
+                        System.out.println(
+                        "EL ADN NO tiene moleculas de Citosina (C) consecutivas");
+                    }
+                    break;
+
                 } else {
-                    throw new Exception("e");
+                    throw new Exception();
                 }
-
-                dna.asignaDNA(DNA + ' ');
-
-
-                dna.countNucleotides();
-
-                System.out.println("La cantidad de A son " + dna.getNumberA());
-                System.out.println("La cantidad de T son " + dna.getNumberT());
-                System.out.println("La cantidad de G son " + dna.getNumberG());
-                System.out.println("La cantidad de C son " + dna.getNumberC());
-                System.out.println();
-
-                dna.numberOfA = 0;
-                dna.numberOfT = 0;
-                dna.numberOfG = 0;
-                dna.numberOfC = 0;
-
-                if (dna.twoConsecutive('A')) {
-                    System.out.println("EL ADN tiene moleculas de Adenina (A) consecutivas");
-                } else {
-                    System.out.println("EL ADN NO tiene moleculas de Adenina (A) consecutivas");
-                }
-                if (dna.twoConsecutive('T')) {
-                    System.out.println("EL ADN tiene moleculas de Tiamina (T) consecutivas");
-                } else {
-                    System.out.println("EL ADN NO tiene moleculas de Tiamina (T) consecutivas");
-                }
-                if (dna.twoConsecutive('G')) {
-                    System.out.println("EL ADN tiene moleculas de Guanina (G) consecutivas");
-                } else {
-                    System.out.println("EL ADN NO tiene moleculas de Guanina (G) consecutivas");
-                }
-                if (dna.twoConsecutive('C')) {
-                    System.out.println("EL ADN tiene moleculas de Citosina (C) consecutivas");
-                } else {
-                    System.out.println("EL ADN NO tiene moleculas de Citosina (C) consecutivas");
-                }
-                break;
 
             } catch (Exception e) {
-                System.out.println("Se esperaba una cadena con A T G C");
+                System.out.println(
+                "Se esperaba una cadena con secuencias de moléculas A T G C");
             }
         }
     }
 }
+

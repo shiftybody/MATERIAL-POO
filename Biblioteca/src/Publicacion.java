@@ -5,7 +5,6 @@ public class Publicacion {
     private final int year;
 
     public Publicacion(String code, String title, int year) {
-
         this.code = code;
         this.title = title;
         this.year = year;
