@@ -1,38 +1,13 @@
 import java.util.Scanner;
 
 public class SecondsCalculator {
-    //Programa utilizando charAt()
 
     public String[] separarDatos(String cadena) {
-
-
-        String acum = "";
-        String[] tokens = new String[3];
-        int indice = 0;
-
-        for (int i = 0; i < cadena.length(); i++){
-            if (cadena.charAt(i) == ':') {
-                if (acum.length() != 0){
-                    tokens[indice] = acum;
-                    indice++;
-                    acum ="";
-                }
-            }
-            else{
-                acum += cadena.charAt(i);
-            }
-        }
-        if (acum.length() != 0){
-            tokens[indice] = acum;
-            indice ++;
-        }
-        return tokens;
+        return cadena.split(":");
 
     }
 
-
     public String solicitarDatos() {
-
         System.out.print("time [hours:minutes:seconds]> ");
         Scanner stdIn = new Scanner(System.in);
         return stdIn.nextLine();
@@ -43,9 +18,7 @@ public class SecondsCalculator {
 
         String[] dato = separarDatos(solicitarDatos());
 
-
         if (dato.length != 3) {
-
             throw new Exception();
 
         } else {
@@ -68,12 +41,12 @@ public class SecondsCalculator {
                     }
 
                     if (segundos >= 0 && segundos <= 60) {
-
                         newSegundos = segundos;
                         newMinutos = minutos * 60;
                         newHoras = horas * 3600;
                         int seconds = newHoras + newMinutos + newSegundos;
-                        System.out.println("The number of seconds is: " + seconds);
+                        System.out.println(
+                                "The number of seconds is: " + seconds);
 
                     } else throw new Exception();
                 } else throw new Exception();
@@ -88,18 +61,18 @@ public class SecondsCalculator {
 
         while (true) {
             try {
-
                 SecondsCalculator Calc = new SecondsCalculator();
                 Calc.principal();
                 break;
 
             } catch (NumberFormatException e) {
-                System.out.println("java.lang.NumberFormatException");
+                System.out.println(
+                        "java.lang.NumberFormatException: " + e.getMessage());
 
             } catch (Exception e) {
-                System.out.println("Invalid input");
+                System.out.println(
+                        "Invalid input");
             }
         }
-
     }
 }
